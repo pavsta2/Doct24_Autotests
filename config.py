@@ -1,0 +1,1 @@
+URL_LOGIN = 'https://doct24-front-react.vercel.app'
