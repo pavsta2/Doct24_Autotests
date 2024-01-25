@@ -1,7 +1,13 @@
 name: Doc24 autotests
 
 on:
-  push
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose target
+        required: false
+        default:
+
 
 jobs:
   test:
