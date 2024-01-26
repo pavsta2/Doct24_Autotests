@@ -37,7 +37,7 @@ def browser(request):
     # создаем экз драйвера нужного браузера либо вызываем ошибку
     if browser == "chrome":
         options = Options()
-        # options.add_argument('--headless')
+        options.add_argument('--headless')
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option("useAutomationExtension", False)
         options.page_load_strategy = 'normal'
