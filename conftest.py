@@ -21,7 +21,7 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="session", autouse=True)
 def login_data():
     return {
-        "PHONE": "9113459841",
+        "PHONE": "9113459839",
         'CODE_1': '1',
         'CODE_2': '1',
         'CODE_3': '1',
