@@ -128,7 +128,7 @@ class RegPage:
 
     def fill_the_field(self, field_locator: str, test_data: str, find_meth: str) -> None:
         """Функция для заполнения поля"""
-        time.sleep(0.2)
+        time.sleep(0.5)
         if find_meth == 'CLASS_NAME':
             # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.CLASS_NAME, self.locators[field_locator]).send_keys(test_data)
@@ -152,7 +152,7 @@ class RegPage:
 
     def click_element(self, elem_locator: str, find_meth:str) -> None:
         """Функция для клика по элементу"""
-        time.sleep(0.2)
+        time.sleep(0.5)
         if find_meth == 'ID':
             self.driver.find_element(By.ID, self.locators[elem_locator]).click()
             # WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.ID, elem_locator))).click()
@@ -170,7 +170,7 @@ class RegPage:
         """Функция для получения объекта элемента"""
         elem_obj = None
         # self.driver.implicitly_wait(2)
-        time.sleep(0.1)
+        time.sleep(0.5)
         try:
             if find_meth == 'ID':
                 elem_obj = self.driver.find_element(By.ID, self.locators[elem])
