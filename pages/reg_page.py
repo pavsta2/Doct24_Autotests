@@ -19,7 +19,7 @@ class RegPage:
         # кнопка далее
         "NXT_BTN_CLS": 'btn',
         'NXT_BTN_XPATH1': '//*[@id="root"]/div/div/div/div/form/div[2]/button',
-        'NXT_BTN_XPATH2': '//*[@id="root"]/div/div/div/div/form/div[3]/button',
+        'NXT_BTN_XPATH2': '/html/body/div[1]/div/div/div/div/form/div[3]/button',
         # кнопка входя в личный кабинет
         'PROFL_BTN_XP': '//*[@id="root"]/header/div/div/a/img',
         # кнопка добавления информации об аллергии
