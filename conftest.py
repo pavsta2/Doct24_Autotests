@@ -21,7 +21,7 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="session", autouse=True)
 def login_data():
     return {
-        "PHONE": "9113459869",
+        "PHONE": "9113459841",
         'CODE_1': '1',
         'CODE_2': '1',
         'CODE_3': '1',
@@ -37,7 +37,7 @@ def browser(request):
     # создаем экз драйвера нужного браузера либо вызываем ошибку
     if browser == "chrome":
         options = Options()
-        options.add_argument('--headless')
+        # options.add_argument('--headless')
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option("useAutomationExtension", False)
         options.page_load_strategy = 'normal'
@@ -45,13 +45,13 @@ def browser(request):
         driver = webdriver.Chrome(service=service, options=options)
 
     elif browser == "firefox":
-        options = webdriver.FirefoxOptions()
-        options.add_argument("--window-size=2000,1000")
-        driver = webdriver.Firefox(options=options)
+        # options = webdriver.FirefoxOptions()
+        # options.add_argument("--window-size=2000,1000")
+        driver = webdriver.Firefox()
     elif browser == "safari":
-        options = webdriver.SafariOptions()
-        options.add_argument("--window-size=maxsize")
-        driver = webdriver.Safari(options=options)
+        # options = webdriver.SafariOptions()
+        # options.add_argument("--window-size=maxsize")
+        driver = webdriver.Safari()
 
     else:
         raise Exception("Invalid browser name")
@@ -87,18 +87,18 @@ def login_patient(browser, login_data):
                            'XPATH')
     reg_page.click_element("NXT_BTN_XPATH1",
                            'XPATH')
-    reg_page.fill_the_field('CODE_1_NM',
+    reg_page.fill_the_field('CODE_1_XPATH',
                             login_data['CODE_1'],
-                            'NAME')
-    reg_page.fill_the_field('CODE_2_NM',
+                            'XPATH')
+    reg_page.fill_the_field('CODE_2_XPATH',
                             login_data['CODE_2'],
-                            'NAME')
-    reg_page.fill_the_field('CODE_3_NM',
+                            'XPATH')
+    reg_page.fill_the_field('CODE_3_XPATH',
                             login_data['CODE_3'],
-                            'NAME')
-    reg_page.fill_the_field('CODE_4_NM',
+                            'XPATH')
+    reg_page.fill_the_field('CODE_4_XPATH',
                             login_data['CODE_4'],
-                            'NAME')
+                            'XPATH')
     reg_page.click_element("NXT_BTN_XPATH2",
                            'XPATH')
 

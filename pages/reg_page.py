@@ -25,7 +25,7 @@ class RegPage:
         # кнопка добавления информации об аллергии
         'ALLERGY_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[2]/button',
         # кнопка добавления информации об операции
-        'SURGERIES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[3]/button',
+        'SURGERIES_BTN_XPATH': '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[3]/button',
         # кнопка добавления информации о приеме препаратов
         'MEDICATION_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[4]/button',
         # кнопка добавления информации о хронич заболеваниях
@@ -46,9 +46,13 @@ class RegPage:
         'PHONE_FLD_XPATH': '//*[@id="phone"]',
         # поля ввода кода
         'CODE_1_NM': 'first',
+        'CODE_1_XPATH': '//*[@id="root"]/div/div/div/div/form/div[1]/input[1]',
         'CODE_2_NM': 'second',
+        'CODE_2_XPATH': '//*[@id="root"]/div/div/div/div/form/div[1]/input[2]',
         'CODE_3_NM': 'third',
+        'CODE_3_XPATH': '//*[@id="root"]/div/div/div/div/form/div[1]/input[3]',
         'CODE_4_NM': 'fourth',
+        'CODE_4_XPATH': '//*[@id="root"]/div/div/div/div/form/div[1]/input[4]',
         # поле вводя фамилии
         'LNAME_XP': '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[1]/input',
         # поле ввода имени
@@ -126,18 +130,22 @@ class RegPage:
         """Функция для заполнения поля"""
         time.sleep(0.2)
         if find_meth == 'CLASS_NAME':
+            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.CLASS_NAME, self.locators[field_locator]).send_keys(test_data)
             # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.CLASS_NAME, field_locator))).
             #  send_keys(test_data))
         elif find_meth == 'ID':
+            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.ID, self.locators[field_locator]).send_keys(test_data)
             # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.ID, field_locator))).
             #  send_keys(test_data))
         elif find_meth == 'NAME':
+            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.NAME, self.locators[field_locator]).send_keys(test_data)
             # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.NAME, field_locator))).
             #  send_keys(test_data))
         elif find_meth == 'XPATH':
+            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.XPATH, self.locators[field_locator]).send_keys(test_data)
             # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, field_locator))).
             #  send_keys(test_data))
@@ -190,6 +198,7 @@ class RegPage:
 
     def check_exists_elem(self, elem_loc:str, meth:str):
         """Функция для проверки наличия элемента на странице"""
+        time.sleep(0.2)
         if meth == 'name':
             try:
                 self.driver.find_element_by_xpath(elem_loc)
@@ -197,10 +206,31 @@ class RegPage:
                 return False
             return True
 
-    def element_is_visible(self, locator, timeout=45):
+    def element_is_visible(self, elem: str, meth: str, timeout=45) -> WebDriverWait:
         """Проверка отображения одного элемента"""
-        element = WebDriverWait(self.driver, timeout).until(
-            EC.visibility_of_element_located(locator)
-        )
+        element = None
+        if meth == 'CLASS_NAME':
+            locator = (By.CLASS_NAME, elem)
+            element = WebDriverWait(self.driver, timeout).until(
+                EC.element_to_be_clickable(locator)
+                )
+        elif meth == 'SELECTOR':
+            locator = (By.CSS_SELECTOR, elem)
+            element = WebDriverWait(self.driver, timeout).until(
+                EC.element_to_be_clickable(locator)
+                )
+        elif meth == 'XPATH':
+            locator = (By.XPATH, elem)
+            element = WebDriverWait(self.driver, timeout).until(
+                EC.element_to_be_clickable(locator)
+                )
+        elif meth == 'NAME':
+            locator = (By.NAME, elem)
+            element = WebDriverWait(self.driver, timeout).until(
+                EC.element_to_be_clickable(locator)
+                )
+
+
+
         return element
 
