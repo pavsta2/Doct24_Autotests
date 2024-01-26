@@ -87,18 +87,18 @@ def login_patient(browser, login_data):
                            'XPATH')
     reg_page.click_element("NXT_BTN_XPATH1",
                            'XPATH')
-    reg_page.fill_the_field('CODE_1_XPATH',
+    reg_page.fill_the_field('CODE_1_NM',
                             login_data['CODE_1'],
-                            'XPATH')
-    reg_page.fill_the_field('CODE_2_XPATH',
+                            'NAME')
+    reg_page.fill_the_field('CODE_2_NM',
                             login_data['CODE_2'],
-                            'XPATH')
-    reg_page.fill_the_field('CODE_3_XPATH',
+                            'NAME')
+    reg_page.fill_the_field('CODE_3_NM',
                             login_data['CODE_3'],
-                            'XPATH')
-    reg_page.fill_the_field('CODE_4_XPATH',
+                            'NAME')
+    reg_page.fill_the_field('CODE_4_NM',
                             login_data['CODE_4'],
-                            'XPATH')
+                            'NAME')
     reg_page.click_element("NXT_BTN_XPATH2",
                            'XPATH')
 
