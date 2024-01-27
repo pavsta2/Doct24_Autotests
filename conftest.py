@@ -21,7 +21,7 @@ def pytest_addoption(parser):
 @pytest.fixture(scope="session", autouse=True)
 def login_data():
     return {
-        "PHONE": "9113459830",
+        "PHONE": "9113459832",
         'CODE_1': '1',
         'CODE_2': '1',
         'CODE_3': '1',
@@ -38,6 +38,7 @@ def browser(request):
     if browser == "chrome":
         options = Options()
         options.add_argument('--headless')
+        options.add_argument("--window-size=2800,1900")
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option("useAutomationExtension", False)
         options.page_load_strategy = 'normal'

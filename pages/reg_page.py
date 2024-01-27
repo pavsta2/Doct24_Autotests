@@ -25,7 +25,8 @@ class RegPage:
         # кнопка добавления информации об аллергии
         'ALLERGY_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[2]/button',
         # кнопка добавления информации об операции
-        'SURGERIES_BTN_XPATH': '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[3]/button',
+        'SURGERIES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[3]/button',
+        'SURGERIES_BTN_SEL': '#root > section > div > div.content > div > div > div.data > div > form > div:nth-child(3) > div:nth-child(5) > button',
         # кнопка добавления информации о приеме препаратов
         'MEDICATION_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[4]/button',
         # кнопка добавления информации о хронич заболеваниях
@@ -128,64 +129,46 @@ class RegPage:
 
     def fill_the_field(self, field_locator: str, test_data: str, find_meth: str) -> None:
         """Функция для заполнения поля"""
-        time.sleep(0.5)
+        time.sleep(0.1)
         if find_meth == 'CLASS_NAME':
-            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.CLASS_NAME, self.locators[field_locator]).send_keys(test_data)
-            # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.CLASS_NAME, field_locator))).
-            #  send_keys(test_data))
         elif find_meth == 'ID':
-            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.ID, self.locators[field_locator]).send_keys(test_data)
-            # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.ID, field_locator))).
-            #  send_keys(test_data))
         elif find_meth == 'NAME':
-            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.NAME, self.locators[field_locator]).send_keys(test_data)
-            # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.NAME, field_locator))).
-            #  send_keys(test_data))
         elif find_meth == 'XPATH':
-            # self.element_is_visible(field_locator, find_meth)
             self.driver.find_element(By.XPATH, self.locators[field_locator]).send_keys(test_data)
-            # (WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, field_locator))).
-            #  send_keys(test_data))
 
-    def click_element(self, elem_locator: str, find_meth:str) -> None:
+    def click_element(self, elem_locator: str, find_meth: str) -> None:
         """Функция для клика по элементу"""
-        time.sleep(0.5)
+        time.sleep(0.1)
         if find_meth == 'ID':
             self.driver.find_element(By.ID, self.locators[elem_locator]).click()
-            # WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.ID, elem_locator))).click()
         elif find_meth == 'CLASS_NAME':
             self.driver.find_element(By.CLASS_NAME, self.locators[elem_locator]).click()
-            # WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.CLASS_NAME, elem_locator))).click()
         elif find_meth == 'SELECTOR':
             self.driver.find_element(By.CSS_SELECTOR, self.locators[elem_locator]).click()
-            # WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, elem_locator))).click()
         elif find_meth == 'XPATH':
             self.driver.find_element(By.XPATH, self.locators[elem_locator]).click()
-            # WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, elem_locator))).click()
 
-    def get_elem_obj_or_ex(self, elem: str, find_meth: str):
+    def get_elem_obj_or_ex(self, elem_locator: str, find_meth: str):
         """Функция для получения объекта элемента"""
         elem_obj = None
-        # self.driver.implicitly_wait(2)
-        time.sleep(0.5)
-        try:
-            if find_meth == 'ID':
-                elem_obj = self.driver.find_element(By.ID, self.locators[elem])
-            elif find_meth == 'CLASS_NAME':
-                elem_obj = self.driver.find_element(By.CLASS_NAME, self.locators[elem])
-            elif find_meth == 'SELECTOR':
-                elem_obj = self.driver.find_element(By.CSS_SELECTOR, self.locators[elem])
-            elif find_meth == 'XPATH':
-                elem_obj = self.driver.find_element(By.XPATH, self.locators[elem])
-            elif find_meth == 'NAME':
-                elem_obj = self.driver.find_element(By.NAME, self.locators[elem])
-        except:
-            print("Element is not found on the page!")
-
-        return elem_obj
+        # time.sleep(0.2)
+        if find_meth == 'ID':
+            elem_obj = self.driver.find_element(By.ID, self.locators[elem_locator])
+        elif find_meth == 'CLASS_NAME':
+            elem_obj = self.driver.find_element(By.CLASS_NAME, self.locators[elem_locator])
+        elif find_meth == 'SELECTOR':
+            elem_obj = self.driver.find_element(By.CSS_SELECTOR, self.locators[elem_locator])
+        elif find_meth == 'XPATH':
+            elem_obj = self.driver.find_element(By.XPATH, self.locators[elem_locator])
+        elif find_meth == 'NAME':
+            elem_obj = self.driver.find_element(By.NAME, self.locators[elem_locator])
+        if elem_obj:
+            return elem_obj
+        else:
+            return False
 
     def get_date_18_years_ago(self):
         """Функция для получения даты 18 лет назад от текущей"""
@@ -196,17 +179,34 @@ class RegPage:
 
         return date_eighteen_y_ago
 
-    def check_exists_elem(self, elem_loc:str, meth:str):
+    def check_exists_elem(self, elem_locator:str, find_meth:str):
         """Функция для проверки наличия элемента на странице"""
-        time.sleep(0.2)
-        if meth == 'name':
+        if find_meth == 'NAME':
             try:
-                self.driver.find_element_by_xpath(elem_loc)
+                self.driver.find_element(By.NAME, elem_locator)
+            except NoSuchElementException:
+                return False
+            return True
+        elif find_meth == 'XPATH':
+            try:
+                self.driver.find_element(By.XPATH, elem_locator)
+            except NoSuchElementException:
+                return False
+            return True
+        elif find_meth == 'ID':
+            try:
+                self.driver.find_element(By.ID, elem_locator)
+            except NoSuchElementException:
+                return False
+            return True
+        elif find_meth == 'SELECTOR':
+            try:
+                self.driver.find_element(By.CSS_SELECTOR, elem_locator)
             except NoSuchElementException:
                 return False
             return True
 
-    def element_is_visible(self, elem: str, meth: str, timeout=45) -> WebDriverWait:
+    def element_is_clickable(self, elem: str, meth: str, timeout=5) -> bool:
         """Проверка отображения одного элемента"""
         element = None
         if meth == 'CLASS_NAME':
@@ -229,8 +229,14 @@ class RegPage:
             element = WebDriverWait(self.driver, timeout).until(
                 EC.element_to_be_clickable(locator)
                 )
+        if element:
+            return True
+        else:
+            return False
 
 
+    def screen_shot(self):
+        self.driver.get_screenshot_as_file("screenshot.png")
 
-        return element
-
+    def scroll_by_pix(self):
+        self.driver.execute_script("window.scrollBy(0,100)", "")

@@ -662,7 +662,7 @@ class TestAllergenField:
 
         login_patient.click_element('PROFL_BTN_XP',
                                     'XPATH')
-
+        login_patient.screen_shot()
         if not login_patient.check_exists_elem('ALLRGEN_FLD_NM', 'NAME'):
             login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
 
@@ -880,8 +880,15 @@ class TestSurgeriesField:
         login_patient.click_element('PROFL_BTN_XP',
                                     'XPATH')
 
-        if not login_patient.check_exists_elem('SURGERIES_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
+        while not login_patient.get_elem_obj_or_ex('SURGERIES_BTN_XPATH', 'XPATH').is_enabled():
+            time.sleep(1)
+
+        # if not login_patient.check_exists_elem('SURGERIES_FLD_NM', 'NAME'):
+            # if not login_patient.get_elem_obj_or_ex('SURGERIES_BTN_XPATH', 'XPATH').is_enabled():
+            #     login_patient.scroll_by_pix()
+            #     # time.sleep(3)
+        login_patient.screen_shot()
+        login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
 
         login_patient.fill_the_field('SURGERIES_FLD_NM',
                                          params['INPUT'],
