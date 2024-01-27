@@ -206,37 +206,10 @@ class RegPage:
                 return False
             return True
 
-    def element_is_clickable(self, elem: str, meth: str, timeout=5) -> bool:
-        """Проверка отображения одного элемента"""
-        element = None
-        if meth == 'CLASS_NAME':
-            locator = (By.CLASS_NAME, elem)
-            element = WebDriverWait(self.driver, timeout).until(
-                EC.element_to_be_clickable(locator)
-                )
-        elif meth == 'SELECTOR':
-            locator = (By.CSS_SELECTOR, elem)
-            element = WebDriverWait(self.driver, timeout).until(
-                EC.element_to_be_clickable(locator)
-                )
-        elif meth == 'XPATH':
-            locator = (By.XPATH, elem)
-            element = WebDriverWait(self.driver, timeout).until(
-                EC.element_to_be_clickable(locator)
-                )
-        elif meth == 'NAME':
-            locator = (By.NAME, elem)
-            element = WebDriverWait(self.driver, timeout).until(
-                EC.element_to_be_clickable(locator)
-                )
-        if element:
-            return True
-        else:
-            return False
-
-
+# метод делает скриншот страницы
     def screen_shot(self):
         self.driver.get_screenshot_as_file("screenshot.png")
 
+# метод скроллит страницу
     def scroll_by_pix(self):
         self.driver.execute_script("window.scrollBy(0,100)", "")

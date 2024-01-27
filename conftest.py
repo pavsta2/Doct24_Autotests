@@ -71,7 +71,7 @@ def browser(request):
 
 @pytest.fixture(scope="session", autouse=True)
 def login_patient(browser, login_data):
-    """Авторизация"""
+    """Авторизация и вход в профиль"""
 
     # Создаем экземпляр RegPage, передавая веб-драйвер (фикстура browser) в качестве аргумента
     reg_page = RegPage(browser)
@@ -80,7 +80,7 @@ def login_patient(browser, login_data):
     # Заходим на страницу авторизации
     reg_page.click_element('LOGIN_BTN_XPATH',
                            'XPATH')
-    time.sleep(2)
+    time.sleep(1)
     # Заполняем поля
     reg_page.fill_the_field('PHONE_FLD_ID',
                             login_data['PHONE'],
@@ -89,8 +89,10 @@ def login_patient(browser, login_data):
                            'SELECTOR')
     reg_page.click_element('GRMT_CHK_BX_XPATH',
                            'XPATH')
+    # нажимаем на кнопку Далее
     reg_page.click_element("NXT_BTN_XPATH1",
                            'XPATH')
+    # вносим проверочный код
     reg_page.fill_the_field('CODE_1_NM',
                             login_data['CODE_1'],
                             'NAME')
@@ -103,7 +105,38 @@ def login_patient(browser, login_data):
     reg_page.fill_the_field('CODE_4_NM',
                             login_data['CODE_4'],
                             'NAME')
+    # нажимаем кнопку
     reg_page.click_element("NXT_BTN_XPATH2",
                            'XPATH')
+    time.sleep(1)
+    # переходим в профиль
+    reg_page.click_element('PROFL_BTN_XP',
+                           'XPATH')
+    time.sleep(1)
 
     return reg_page
+
+
+# фикстура для нажатия на кнопку Добавить аллергию
+@pytest.fixture(scope="session", autouse=True)
+def open_allegry_section(browser, login_patient):
+    login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
+
+
+# фикстура для нажатия на кнопку Добавить операцию
+@pytest.fixture(scope="session", autouse=True)
+def open_surgeries_section(browser, login_patient):
+    login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
+
+
+# фикстура для нажатия на кнопку Добавить операцию
+@pytest.fixture(scope="session", autouse=True)
+def open_medication_section(browser, login_patient):
+    login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
+
+
+# фикстура для нажатия на кнопку Добавить заболевание
+@pytest.fixture(scope="session", autouse=True)
+def open_chron_des_section(browser, login_patient):
+    login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
+

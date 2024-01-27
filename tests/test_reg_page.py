@@ -20,9 +20,8 @@ class TestLastNameField:
                             ids=dtp.ALLNAME_FLD_LEN_POSSITIVE[1])
     def test_lname_len_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации фамилии поо кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('LNAME_XP', 'XPATH').clear()
+        login_patient.screen_shot()
         login_patient.fill_the_field('LNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -35,9 +34,7 @@ class TestLastNameField:
                          ids=dtp.ALLNAME_FLD_SYMB_POSSITIVE[1])
     def test_lname_symbols_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации фамилии по вводимым символам"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('LNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('LNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -50,9 +47,7 @@ class TestLastNameField:
                          ids=dtp.ALLNAME_FLD_SPACE_DELETE[1])
     def test_lname_space_del_possitive(self, login_patient, params):
         """Позитивные проверки удаления пробела в начале и в конце"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('LNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('LNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -67,9 +62,7 @@ class TestLastNameField:
                          ids=dtp.ALLNAME_FLD_TEXT_REGISTR[1])
     def test_lname_text_registr_possitive(self, login_patient, params):
         """Позитивные проверки сохранения текста в том регистре, в каком его ввел юзер"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('LNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('LNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -86,9 +79,7 @@ class TestLastNameField:
                          ids=dtn.ALLNAME_FLD_MIN_LEN[1])
     def test_lname_valid_min_len_negotive(self, login_patient, params):
         """Негативные проверки валидации фамилии по минимальному кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('LNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('LNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -106,9 +97,7 @@ class TestLastNameField:
                          ids=dtn.ALLNAME_FLD_MAX_LEN[1])
     def test_lname_valid_max_len_negotive(self, login_patient, params):
         """Негативные проверки валидации фамилии по максимальному кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('LNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('LNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -128,9 +117,7 @@ class TestFirstNameField:
                             ids=dtp.ALLNAME_FLD_LEN_POSSITIVE[1])
     def test_fname_len_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации имени по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('FNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('FNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -144,9 +131,7 @@ class TestFirstNameField:
                          ids=dtp.ALLNAME_FLD_SYMB_POSSITIVE[1])
     def test_fname_symbols_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации имени по вводимым символам"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('FNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('FNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -159,9 +144,7 @@ class TestFirstNameField:
                          ids=dtp.ALLNAME_FLD_SPACE_DELETE[1])
     def test_fname_space_del_possitive(self, login_patient, params):
         """Позитивные проверки удаления пробела в начале и в конце"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('FNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('FNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -176,9 +159,7 @@ class TestFirstNameField:
                          ids=dtp.ALLNAME_FLD_TEXT_REGISTR[1])
     def test_fname_text_registr_possitive(self, login_patient, params):
         """Позитивные проверки сохранения текста в том регистре, в каком его ввел юзер"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('FNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('FNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -194,9 +175,7 @@ class TestFirstNameField:
                          ids=dtn.ALLNAME_FLD_MIN_LEN[1])
     def test_fname_valid_min_len_negotive(self, login_patient, params):
         """Негативные проверки валидации имени по минимальному кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('FNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('FNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -214,9 +193,7 @@ class TestFirstNameField:
                          ids=dtn.ALLNAME_FLD_MAX_LEN[1])
     def test_fname_valid_max_len_negotive(self, login_patient, params):
         """Негативные проверки валидации имени по максимальному кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                           'XPATH')
+        login_patient.get_elem_obj_or_ex('FNAME_XP', 'XPATH').clear()
         login_patient.fill_the_field('FNAME_XP',
                             params['INPUT'],
                             'XPATH')
@@ -237,9 +214,7 @@ class TestPatronField:
                             ids=dtp.ALLNAME_FLD_LEN_POSSITIVE[1])
     def test_patron_len_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации отчества по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
+        login_patient.get_elem_obj_or_ex('PATRONYMIC_XP', 'XPATH').clear()
         login_patient.fill_the_field('PATRONYMIC_XP',
                                          params['INPUT'],
                                          'XPATH')
@@ -252,9 +227,7 @@ class TestPatronField:
                             ids=dtp.ALLNAME_FLD_SYMB_POSSITIVE[1])
     def test_patron_symbols_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации отчества по вводимым символам"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
+        login_patient.get_elem_obj_or_ex('PATRONYMIC_XP', 'XPATH').clear()
         login_patient.fill_the_field('PATRONYMIC_XP',
                                          params['INPUT'],
                                          'XPATH')
@@ -268,9 +241,7 @@ class TestPatronField:
                             ids=dtp.ALLNAME_FLD_SPACE_DELETE[1])
     def test_patron_space_del_possitive(self, login_patient, params):
         """Позитивные проверки удаления пробела в начале и в конце"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
+        login_patient.get_elem_obj_or_ex('PATRONYMIC_XP', 'XPATH').clear()
         login_patient.fill_the_field('PATRONYMIC_XP',
                                          params['INPUT'],
                                          'XPATH')
@@ -285,9 +256,7 @@ class TestPatronField:
                             ids=dtp.ALLNAME_FLD_TEXT_REGISTR[1])
     def test_patron_text_registr_possitive(self, login_patient, params):
         """Позитивные проверки сохранения текста в том регистре, в каком его ввел юзер"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
+        login_patient.get_elem_obj_or_ex('PATRONYMIC_XP', 'XPATH').clear()
         login_patient.fill_the_field('PATRONYMIC_XP',
                                          params['INPUT'],
                                          'XPATH')
@@ -302,9 +271,7 @@ class TestPatronField:
                             ids=dtn.ALLNAME_FLD_MIN_LEN[1])
     def test_patron_valid_min_len_negotive(self, login_patient, params):
         """Негативные проверки валидации отчества по минимальному кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
+        login_patient.get_elem_obj_or_ex('PATRONYMIC_XP', 'XPATH').clear()
         login_patient.fill_the_field('PATRONYMIC_XP',
                                          params['INPUT'],
                                          'XPATH')
@@ -323,9 +290,7 @@ class TestPatronField:
                             ids=dtn.ALLNAME_FLD_MAX_LEN[1])
     def test_patron_valid_max_len_negotive(self, login_patient, params):
         """Негативные проверки валидации отчества по максимальному кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
+        login_patient.get_elem_obj_or_ex('PATRONYMIC_XP', 'XPATH').clear()
         login_patient.fill_the_field('PATRONYMIC_XP',
                                          params['INPUT'],
                                          'XPATH')
@@ -347,9 +312,6 @@ class TestDBirthField:
                             ids=dtp.DBIRTH_FLD_POSSITIVE[1])
     def test_birthdate_valid_possitive(self, login_patient, params):
         """Позитивные проверки ввода валидной даты рождения"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
         login_patient.get_elem_obj_or_ex('DBIRTH_FLD_NM','NAME').clear()
         login_patient.fill_the_field('DBIRTH_FLD_NM',
                                          params['INPUT'],
@@ -367,9 +329,6 @@ class TestDBirthField:
                              ids=dtn.DBIRTH_FLD_UNVALID[1])
     def test_birthdate_valid_negotive(self, login_patient, params):
         """Негативные проверки ввода невалидной даты рождения"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
         login_patient.get_elem_obj_or_ex('DBIRTH_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('DBIRTH_FLD_NM',
                                      params['INPUT'],
@@ -390,9 +349,6 @@ class TestDBirthField:
     @allure.story('Позитивная проверка ввода даты рождения при которой юзеру ровно 18 лет')
     def test_birthdate_eq_18(self, login_patient):
         """Позитивные проверки ввода даты рождения, при которой юзеру ровно 18"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
         # очищаем поле
         login_patient.get_elem_obj_or_ex('DBIRTH_FLD_NM', 'NAME').clear()
         # получаем дату 18 лет назад от текущей
@@ -403,15 +359,11 @@ class TestDBirthField:
                                      'NAME')
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DBIRTH_XPATH', 'XPATH').get_attribute('textContent'))
-
         assert err_mess == '', 'При вводе валидной даты появляется соощение об ошибке'
 
     @allure.story('Позитивная проверка ввода даты рождения при которой юзер старше 18 лет')
     def test_birthdate_more_then_18(self, login_patient):
         """Позитивные проверки ввода даты рождения, при которой юзер старше 18"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
         # очищаем поле
         login_patient.get_elem_obj_or_ex('DBIRTH_FLD_NM', 'NAME').clear()
         # получаем дату 18 лет назад и еще минус один день
@@ -422,15 +374,12 @@ class TestDBirthField:
                                      'NAME')
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DBIRTH_XPATH', 'XPATH').get_attribute('textContent'))
-
         assert err_mess == '', 'При вводе валидной даты появляется сообщение об ошибке'
 
     @allure.story('Негативная проверка ввода даты рождения при которой юзер младше 18 лет')
     def test_birthdate_less_then_18(self, login_patient):
         """Позитивные проверки ввода даты рождения, при которой юзер младше 18"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
+        # очищаем поле
         login_patient.get_elem_obj_or_ex('DBIRTH_FLD_NM', 'NAME').clear()
         birthdate_to_test = (login_patient.get_date_18_years_ago() + timedelta(days=1)).strftime("%d/%m/%Y")
         login_patient.fill_the_field('DBIRTH_FLD_NM',
@@ -453,9 +402,7 @@ class TestEmailField:
                             ids=dtp.EMAIL_FLD_LEN[1])
     def test_email_len_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации поля Email по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
+        login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
@@ -470,9 +417,7 @@ class TestEmailField:
                              ids=dtp.EMAIL_FLD_SYMB[1])
     def test_email_symb_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации поля Email по типу вводимых символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
+        login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -486,9 +431,7 @@ class TestEmailField:
                              ids=dtn.EMAIL_FLD_LEN[1])
     def test_email_len_valid_negotive(self, login_patient, params):
         """Негативные проверки валидации поля Email по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
+        login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -506,9 +449,7 @@ class TestEmailField:
                              ids=dtn.EMAIL_FLD_MASK[1])
     def test_email_mask_valid_negotive(self, login_patient, params):
         """Негативные проверки валидации поля Email по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
+        login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -526,9 +467,7 @@ class TestEmailField:
                              ids=dtp.EMAIL_FLD_SPACE_DELETE[1])
     def test_email_space_del_possitive(self, login_patient, params):
         """Позитивные проверки удаления пробела в начале и в конце"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
+        login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -546,9 +485,6 @@ class TestHeightField:
                             ids=dtp.HEIGHT_FLD[1])
     def test_height_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации поля Роста"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
         login_patient.get_elem_obj_or_ex('HEIGHT_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('HEIGHT_FLD_NM',
                                          params['INPUT'],
@@ -565,14 +501,11 @@ class TestHeightField:
     def test_height_len_valid_negotive(self, login_patient, params):
         """Негативные проверки валидации поля при воде более 3 цифр в поле Роста"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
         login_patient.get_elem_obj_or_ex('HEIGHT_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('HEIGHT_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('HEIGHT_FLD_NM', 'NAME').get_attribute('value')
-
         assert inserted == params['INPUT'][0:3], (f"Можно ввести невалидные данные, expected: {params['INPUT'][:-1]},"
                                                   f"fact: {inserted}")
 
@@ -583,14 +516,11 @@ class TestHeightField:
     def test_height_symb_valid_negotive(self, login_patient, params):
         """Негативные проверки валидации поля Роста по типу символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
         login_patient.get_elem_obj_or_ex('HEIGHT_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('HEIGHT_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('HEIGHT_FLD_NM', 'NAME').get_attribute('value')
-
         assert inserted == '', 'Можно ввести невалидные символы'
 
 
@@ -603,14 +533,11 @@ class TestWeightField:
     def test_weight_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации поля Вес"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                        'XPATH')
         login_patient.get_elem_obj_or_ex('WEIGHT_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('WEIGHT_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         inserted = login_patient.get_elem_obj_or_ex('WEIGHT_FLD_NM', 'NAME').get_attribute('value')
-
         assert inserted == params['INPUT'], 'Ввод сохраняется не в том виде, как ввел пользователь'
 
     @allure.story('Негативные проверки валидации поля Вес по кол-ву символов')
@@ -620,14 +547,11 @@ class TestWeightField:
     def test_weight_len_valid_negotive(self, login_patient, params):
         """Негативные проверки валидации поля Вес по кол-ву символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
         login_patient.get_elem_obj_or_ex('WEIGHT_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('WEIGHT_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         height_inserted = login_patient.get_elem_obj_or_ex('WEIGHT_FLD_NM', 'NAME').get_attribute('value')
-
         assert height_inserted == params['INPUT'][0:3], (f'При вводе 4-х знач числа, 4-й символ в поле должен '
                                                          f'обрезаться и в поле оставаться 3-х знач число, но expected:'
                                                          f' {params["INPUT"][0:3]}, '
@@ -640,14 +564,11 @@ class TestWeightField:
     def test_weight_symb_valid_negotive(self, login_patient, params):
         """Негативные проверки валидации поля Вес по типу символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
         login_patient.get_elem_obj_or_ex('WEIGHT_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('WEIGHT_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         height_inserted = login_patient.get_elem_obj_or_ex('WEIGHT_FLD_NM', 'NAME').get_attribute('value')
-
         assert height_inserted == '', 'можно ввести НЕ цифры в качестве значения веса'
 
 
@@ -657,50 +578,33 @@ class TestAllergenField:
     @pytest.mark.parametrize('params',
                             dtp.ALLERGEN_FLD_LEN[0],
                             ids=dtp.ALLERGEN_FLD_LEN[1])
-    def test_allergen_len_valid_possitive(self, login_patient, params):
+    def test_allergen_len_valid_possitive(self, login_patient, params, open_allegry_section):
         """Позитивные проверки валидации поля Аллерген по кол-ву символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-        login_patient.screen_shot()
-        if not login_patient.check_exists_elem('ALLRGEN_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('ALLRGEN_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('ALLRGEN_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         allergen_inserted = login_patient.get_elem_obj_or_ex('ALLRGEN_FLD_NM', 'NAME').get_attribute('value')
-
         assert allergen_inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {allergen_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_ALLERGEN_XPATH', 'XPATH').get_attribute('textContent'))
-
         assert err_mess == '', 'при вводе валидного кол-ва символов появл ошибка'
-
 
     @allure.story('Негативные проверки валидации поля Аллерген по min кол-ву символов')
     @pytest.mark.parametrize('params',
                              dtn.ALLERGEN_FLD_MIN_LEN[0],
                              ids=dtn.ALLERGEN_FLD_MIN_LEN[1])
-    def test_allergen_min_len_valid_negotive(self, login_patient, params):
+    def test_allergen_min_len_valid_negotive(self, login_patient, params, open_allegry_section):
         """Негативные проверки валидации поля Аллерген по min кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('ALLRGEN_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('ALLRGEN_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('ALLRGEN_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         allergen_inserted = login_patient.get_elem_obj_or_ex('ALLRGEN_FLD_NM', 'NAME').get_attribute('value')
-
         assert allergen_inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {allergen_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_ALLERGEN_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -712,21 +616,15 @@ class TestAllergenField:
     @pytest.mark.parametrize('params',
                              dtn.ALLERGEN_FLD_MAX_LEN[0],
                              ids=dtn.ALLERGEN_FLD_MAX_LEN[1])
-    def test_allergen_max_len_valid_negotive(self, login_patient, params):
+    def test_allergen_max_len_valid_negotive(self, login_patient, params, open_allegry_section):
         """Негативные проверки валидации поля Аллерген по max кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-        if not login_patient.check_exists_elem('ALLRGEN_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
+        login_patient.get_elem_obj_or_ex('ALLRGEN_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('ALLRGEN_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         allergen_inserted = login_patient.get_elem_obj_or_ex('ALLRGEN_FLD_NM', 'NAME').get_attribute('value')
-
         assert allergen_inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                       f'fact input: {allergen_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_ALLERGEN_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -739,15 +637,9 @@ class TestAllergenField:
     @pytest.mark.parametrize('params',
                              dtp.ALLERGEN_FLD_SYMB[0],
                              ids=dtp.ALLERGEN_FLD_SYMB[1])
-    def test_allergen_symb_valid_possitive(self, login_patient, params):
+    def test_allergen_symb_valid_possitive(self, login_patient, params, open_allegry_section):
         """Позитивные проверки валидации поля Аллерген по типам символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('ALLRGEN_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('ALLRGEN_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('ALLRGEN_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -755,7 +647,6 @@ class TestAllergenField:
         assert allergen_inserted == params['INPUT'], (
             f'введенный текст отображается не так как ожидалось, expected input: {params["INPUT"]}, '
             f'fact input: {allergen_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_ALLERGEN_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess == '', 'при вводе валидных типов символов появл ошибка'
@@ -766,22 +657,16 @@ class TestReactionField:
     @pytest.mark.parametrize('params',
                             dtp.REACTION_FLD_LEN[0],
                             ids=dtp.REACTION_FLD_LEN[1])
-    def test_reaction_len_valid_possitive(self, login_patient, params):
+    def test_reaction_len_valid_possitive(self, login_patient, params, open_allegry_section):
         """Позитивные проверки валидации поля Реакция по кол-ву символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('REACTION_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('REACTION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('REACTION_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         value_inserted = login_patient.get_elem_obj_or_ex('REACTION_FLD_NM', 'NAME').get_attribute('value')
         assert value_inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {value_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_REACTION_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess == '', f'При вводе валидного кол-ва символов появл ошибка: {err_mess}'
@@ -790,22 +675,16 @@ class TestReactionField:
     @pytest.mark.parametrize('params',
                              dtn.REACTION_FLD_MIN_LEN[0],
                              ids=dtn.REACTION_FLD_MIN_LEN[1])
-    def test_reaction_min_len_valid_negotive(self, login_patient, params):
+    def test_reaction_min_len_valid_negotive(self, login_patient, params, open_allegry_section):
         """Негативные проверки валидации поля Реакция по минимальному кол-ву символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('REACTION_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('REACTION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('REACTION_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         value_inserted = login_patient.get_elem_obj_or_ex('REACTION_FLD_NM', 'NAME').get_attribute('value')
         assert value_inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {value_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_REACTION_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -817,15 +696,10 @@ class TestReactionField:
     @pytest.mark.parametrize('params',
                              dtn.REACTION_FLD_MAX_LEN[0],
                              ids=dtn.REACTION_FLD_MAX_LEN[1])
-    def test_reaction_max_len_valid_negotive(self, login_patient, params):
+    def test_reaction_max_len_valid_negotive(self, login_patient, params, open_allegry_section):
         """Негативные проверки валидации поля Реакция по максимальному кол-ву символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('REACTION_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('REACTION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('REACTION_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -833,7 +707,6 @@ class TestReactionField:
 
         assert value_inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                    f'fact input: {value_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_REACTION_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -845,14 +718,10 @@ class TestReactionField:
     @pytest.mark.parametrize('param',
                              dtp.ALLERGEN_FLD_SYMB[0],
                              ids=dtp.ALLERGEN_FLD_SYMB[1])
-    def test_allergen_symb_valid_possitive(self, login_patient, param):
+    def test_reaction_symb_valid_possitive(self, login_patient, param, open_allegry_section):
         """Позитивные проверки валидации поля Реакция по типам символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-        if not login_patient.check_exists_elem('REACTION_FLD_NM', 'NAME'):
-            login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('REACTION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('REACTION_FLD_NM',
                                      param['INPUT'],
                                      'NAME')
@@ -861,10 +730,8 @@ class TestReactionField:
         assert value_inserted == param['INPUT'], (
             f'введенный текст отображается не так как ожидалось, expected input: {param["INPUT"]}, '
             f'fact input: {value_inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_REACTION_XPATH', 'XPATH').get_attribute('textContent'))
-
         assert err_mess == '', 'при вводе валидных типов символов появл ошибка'
 
 
@@ -874,29 +741,16 @@ class TestSurgeriesField:
     @pytest.mark.parametrize('params',
                             dtp.SURGERIES_FLD_LEN[0],
                             ids=dtp.SURGERIES_FLD_LEN[1])
-    def test_surgeries_len_valid_possitive(self, login_patient, params):
+    def test_surgeries_len_valid_possitive(self, login_patient, params, open_surgeries_section):
         """Позитивные проверки валидации поля Операции по кол-ву символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        while not login_patient.get_elem_obj_or_ex('SURGERIES_BTN_XPATH', 'XPATH').is_enabled():
-            time.sleep(1)
-
-        # if not login_patient.check_exists_elem('SURGERIES_FLD_NM', 'NAME'):
-            # if not login_patient.get_elem_obj_or_ex('SURGERIES_BTN_XPATH', 'XPATH').is_enabled():
-            #     login_patient.scroll_by_pix()
-            #     # time.sleep(3)
-        login_patient.screen_shot()
-        login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('SURGERIES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIES_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         inserted = login_patient.get_elem_obj_or_ex('SURGERIES_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_SURGERIES_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -906,22 +760,15 @@ class TestSurgeriesField:
     @pytest.mark.parametrize('params',
                              dtn.SURGERIES_FLD_MIN_LEN[0],
                              ids=dtn.SURGERIES_FLD_MIN_LEN[1])
-    def test_surgeries_min_len_valid_negotive(self, login_patient, params):
+    def test_surgeries_min_len_valid_negotive(self, login_patient, params, open_surgeries_section):
         """Негативные проверки валидации поля Операции по min кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('SURGERIES_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('SURGERIES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIES_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         inserted = login_patient.get_elem_obj_or_ex('SURGERIES_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_SURGERIES_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
@@ -934,22 +781,16 @@ class TestSurgeriesField:
     @pytest.mark.parametrize('params',
                              dtn.SURGERIES_FLD_MAX_LEN[0],
                              ids=dtn.SURGERIES_FLD_MAX_LEN[1])
-    def test_surgeries_max_len_valid_negotive(self, login_patient, params):
+    def test_surgeries_max_len_valid_negotive(self, login_patient, params, open_surgeries_section):
         """Негативные проверки валидации поля Операции по max кол-ву символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-        if not login_patient.check_exists_elem('SURGERIES_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('SURGERIES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIES_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('SURGERIES_FLD_NM', 'NAME').get_attribute('value')
-
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                       f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_SURGERIES_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -963,15 +804,10 @@ class TestSurgeriesField:
     @pytest.mark.parametrize('params',
                              dtp.SURGERIES_FLD_SYMB[0],
                              ids=dtp.SURGERIES_FLD_SYMB[1])
-    def test_surgeries_symb_valid_possitive(self, login_patient, params):
+    def test_surgeries_symb_valid_possitive(self, login_patient, params, open_surgeries_section):
         """Позитивные проверки валидации поля Операции по типам символов"""
 
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('SURGERIES_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('SURGERIES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIES_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -979,7 +815,6 @@ class TestSurgeriesField:
 
         assert inserted == params['INPUT'], (f'введенный текст отображается не так как ожидалось, expected input: '
                                              f'{params["INPUT"]}, fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_SURGERIES_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess == '', 'при вводе валидных типов символов появл ошибка'
@@ -992,14 +827,8 @@ class TestSurgerieYearField:
     @pytest.mark.parametrize('params',
                             dtp.SURGERIE_YEAR_FLD[0],
                             ids=dtp.SURGERIE_YEAR_FLD[1])
-    def test_surgerie_year_valid_possitive(self, login_patient, params):
+    def test_surgerie_year_valid_possitive(self, login_patient, params, open_surgeries_section):
         """Позитивные проверки валидации поля Год проведения (операции) по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('SURGERIE_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIE_YEAR_FLD_NM',
@@ -1018,14 +847,8 @@ class TestSurgerieYearField:
     @pytest.mark.parametrize('params',
                             dtn.SURGERIE_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[0],
                             ids=dtn.SURGERIE_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[1])
-    def test_surger_year_len_less_then_4_digits_valid_negotive(self, login_patient, params):
+    def test_surger_year_len_less_then_4_digits_valid_negotive(self, login_patient, params, open_surgeries_section):
         """ПНегативные проверки валидации поля Год проведения (операции) при вводе менее 4 цифр"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('SURGERIE_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIE_YEAR_FLD_NM',
@@ -1047,15 +870,9 @@ class TestSurgerieYearField:
     @pytest.mark.parametrize('params',
                              dtn.SURGERIE_YEAR_FLD_CANT_INPUT[0],
                              ids=dtn.SURGERIE_YEAR_FLD_CANT_INPUT[1])
-    def test_surger_year_cant_input_valid_negotive(self, login_patient, params):
+    def test_surger_year_cant_input_valid_negotive(self, login_patient, params, open_surgeries_section):
         """Негативные проверки валидации поля Год проведения (операции) на невозможность ввести символы,
         отличные от цифр"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('SURGERIE_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIE_YEAR_FLD_NM',
@@ -1068,21 +885,15 @@ class TestSurgerieYearField:
     @pytest.mark.parametrize('params',
                              dtn.SURGERIE_YEAR_LEN_MORE_THEN_FOUR_DGT_FLD[0],
                              ids=dtn.SURGERIE_YEAR_LEN_MORE_THEN_FOUR_DGT_FLD[1])
-    def test_surger_year_len_more_than_4_digits_valid_negotive(self, login_patient, params):
+    def test_surger_year_len_more_than_4_digits_valid_negotive(self, login_patient, params, open_surgeries_section):
         """Негативные проверки валидации поля Год проведения (операции) на невозможность ввести более 4 цифр"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('SURGERIE_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIE_YEAR_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').get_attribute('value')
-        assert inserted == params['INPUT'][0:3], (f'Можно ввести более 4 цифр, expected {params["INPUT"][0:3]},'
+        assert inserted == params['INPUT'][0:4], (f'Можно ввести более 4 цифр, expected {params["INPUT"][0:4]},'
                                                   f'fact: {inserted}')
 
 
@@ -1092,15 +903,9 @@ class TestMedicationField:
     @pytest.mark.parametrize('params',
                             dtp.MEDICATION_FLD_LEN[0],
                             ids=dtp.MEDICATION_FLD_LEN[1])
-    def test_medication_len_valid_possitive(self, login_patient, params):
+    def test_medication_len_valid_possitive(self, login_patient, params, open_medication_section):
         """Позитивные проверки валидации поля Препарат по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('MEDICATION_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('MEDICATION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('MEDICATION_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
@@ -1108,7 +913,6 @@ class TestMedicationField:
 
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_MEDICATION_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess == '', 'при вводе валидного кол-ва символов появл ошибка'
@@ -1117,22 +921,15 @@ class TestMedicationField:
     @pytest.mark.parametrize('params',
                              dtn.MEDICATION_FLD_MIN_LEN[0],
                              ids=dtn.MEDICATION_FLD_MIN_LEN[1])
-    def test_medication_min_len_valid_negotive(self, login_patient, params):
+    def test_medication_min_len_valid_negotive(self, login_patient, params, open_medication_section):
         """Негативные проверки валидации поля Препарат по min кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('MEDICATION_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('MEDICATION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('MEDICATION_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         inserted = login_patient.get_elem_obj_or_ex('MEDICATION_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_MEDICATION_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
@@ -1145,22 +942,15 @@ class TestMedicationField:
     @pytest.mark.parametrize('params',
                              dtn.MEDICATION_FLD_MAX_LEN[0],
                              ids=dtn.MEDICATION_FLD_MAX_LEN[1])
-    def test_medication_max_len_valid_negotive(self, login_patient, params):
+    def test_medication_max_len_valid_negotive(self, login_patient, params, open_medication_section):
         """Негативные проверки валидации поля Препарат по max кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('MEDICATION_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('MEDICATION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('MEDICATION_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('MEDICATION_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                       f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_MEDICATION_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1174,15 +964,9 @@ class TestMedicationField:
     @pytest.mark.parametrize('params',
                              dtp.MEDICATION_FLD_SYMB[0],
                              ids=dtp.MEDICATION_FLD_SYMB[1])
-    def test_medication_symb_valid_possitive(self, login_patient, params):
+    def test_medication_symb_valid_possitive(self, login_patient, params, open_medication_section):
         """Позитивные проверки валидации поля Препарат по типам символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('MEDICATION_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('MEDICATION_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('MEDICATION_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -1201,22 +985,15 @@ class TestDosageField:
     @pytest.mark.parametrize('params',
                             dtp.DOSAGE_FLD_LEN[0],
                             ids=dtp.DOSAGE_FLD_LEN[1])
-    def test_dosage_len_valid_possitive(self, login_patient, params):
+    def test_dosage_len_valid_possitive(self, login_patient, params, open_medication_section):
         """Позитивные проверки валидации поля Дозировка по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('DOSAGE_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('DOSAGE_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         inserted = login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DOSAGE_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess == '', 'при вводе валидного кол-ва символов появл ошибка'
@@ -1225,22 +1002,15 @@ class TestDosageField:
     @pytest.mark.parametrize('params',
                              dtn.DASAGE_FLD_MIN_LEN[0],
                              ids=dtn.DASAGE_FLD_MIN_LEN[1])
-    def test_dosage_min_len_valid_negotive(self, login_patient, params):
+    def test_dosage_min_len_valid_negotive(self, login_patient, params, open_medication_section):
         """Негативные проверки валидации поля Дозировка по min кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('DOSAGE_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('DOSAGE_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
         inserted = login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DOSAGE_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1254,22 +1024,15 @@ class TestDosageField:
     @pytest.mark.parametrize('params',
                              dtn.DOSAGE_FLD_MAX_LEN[0],
                              ids=dtn.DOSAGE_FLD_MAX_LEN[1])
-    def test_dosage_max_len_valid_negotive(self, login_patient, params):
+    def test_dosage_max_len_valid_negotive(self, login_patient, params, open_medication_section):
         """Негативные проверки валидации поля Дозировка по max кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('DOSAGE_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('DOSAGE_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                       f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DOSAGE_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
@@ -1282,22 +1045,15 @@ class TestDosageField:
     @pytest.mark.parametrize('params',
                              dtp.DASAGE_FLD_SYMB[0],
                              ids=dtp.DASAGE_FLD_SYMB[1])
-    def test_dosage_symb_valid_possitive(self, login_patient, params):
+    def test_dosage_symb_valid_possitive(self, login_patient, params, open_medication_section):
         """Позитивные проверки валидации поля Дозировка по типам символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('DOSAGE_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('DOSAGE_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('DOSAGE_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'], (f'введенный текст отображается не так как ожидалось, expected input: '
                                              f'{params["INPUT"]}, fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DOSAGE_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess == '', 'при вводе валидных типов символов появл ошибка'
@@ -1309,15 +1065,9 @@ class TestFregOfTakingField:
     @pytest.mark.parametrize('params',
                             dtp.FREQ_OF_TKNG_FLD_LEN[0],
                             ids=dtp.FREQ_OF_TKNG_FLD_LEN[1])
-    def test_freq_of_taking_len_valid_possitive(self, login_patient, params):
+    def test_freq_of_taking_len_valid_possitive(self, login_patient, params, open_medication_section):
         """Позитивные проверки валидации поля Периодичность приема по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('FREQ_OF_TAKING_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('FREQ_OF_TAKING_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('FREQ_OF_TAKING_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
@@ -1325,10 +1075,8 @@ class TestFregOfTakingField:
 
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_FREQ_OF_TKNG_XPATH', 'XPATH').get_attribute('textContent'))
-
         assert err_mess == '', 'при вводе валидного кол-ва символов появл ошибка'
 
 
@@ -1336,15 +1084,9 @@ class TestFregOfTakingField:
     @pytest.mark.parametrize('params',
                              dtn.FREQ_OF_TKNG_FLD_MIN_LEN[0],
                              ids=dtn.FREQ_OF_TKNG_FLD_MIN_LEN[1])
-    def test_freq_of_taking_min_len_valid_negotive(self, login_patient, params):
+    def test_freq_of_taking_min_len_valid_negotive(self, login_patient, params, open_medication_section):
         """Негативные проверки валидации поля Периодичность приема по min кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('FREQ_OF_TAKING_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('FREQ_OF_TAKING_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('FREQ_OF_TAKING_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
@@ -1366,15 +1108,9 @@ class TestFregOfTakingField:
     @pytest.mark.parametrize('params',
                              dtn.FREQ_OF_TKNG_FLD_MAX_LEN[0],
                              ids=dtn.FREQ_OF_TKNG_FLD_MAX_LEN[1])
-    def test_freq_of_taking_max_len_valid_negotive(self, login_patient, params):
+    def test_freq_of_taking_max_len_valid_negotive(self, login_patient, params, open_medication_section):
         """Негативные проверки валидации поля Периодичность приема по max кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('FREQ_OF_TAKING_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('FREQ_OF_TAKING_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('FREQ_OF_TAKING_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -1382,7 +1118,6 @@ class TestFregOfTakingField:
 
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                       f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_FREQ_OF_TKNG_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1396,15 +1131,9 @@ class TestFregOfTakingField:
     @pytest.mark.parametrize('params',
                              dtp.FREQ_OF_TKNG_FLD_SYMB[0],
                              ids=dtp.FREQ_OF_TKNG_FLD_SYMB[1])
-    def test_freq_of_taking_symb_valid_possitive(self, login_patient, params):
+    def test_freq_of_taking_symb_valid_possitive(self, login_patient, params, open_medication_section):
         """Позитивные проверки валидации поля Периодичность приема по типам символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('FREQ_OF_TAKING_FLD_NM', 'NAME'):
-            login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('FREQ_OF_TAKING_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('FREQ_OF_TAKING_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -1412,7 +1141,6 @@ class TestFregOfTakingField:
 
         assert inserted == params['INPUT'], (f'введенный текст отображается не так как ожидалось, expected input: '
                                              f'{params["INPUT"]}, fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_FREQ_OF_TKNG_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1425,15 +1153,9 @@ class TestChronDesField:
     @pytest.mark.parametrize('params',
                             dtp.CHRON_DES_FLD_LEN[0],
                             ids=dtp.CHRON_DES_FLD_LEN[1])
-    def test_chron_des_len_valid_possitive(self, login_patient, params):
+    def test_chron_des_len_valid_possitive(self, login_patient, params, open_chron_des_section):
         """Позитивные проверки валидации поля Хронические заболевания по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DES_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('CHRON_DES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DES_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
@@ -1441,7 +1163,6 @@ class TestChronDesField:
 
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_CHRON_DES_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1452,15 +1173,9 @@ class TestChronDesField:
     @pytest.mark.parametrize('params',
                              dtn.CHRON_DES_FLD_MIN_LEN[0],
                              ids=dtn.CHRON_DES_FLD_MIN_LEN[1])
-    def test_chron_des_min_len_valid_negotive(self, login_patient, params):
+    def test_chron_des_min_len_valid_negotive(self, login_patient, params, open_chron_des_section):
         """Негативные проверки валидации поля Хронические заболевания по min кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DES_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('CHRON_DES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DES_FLD_NM',
                                          params['INPUT'],
                                          'NAME')
@@ -1468,7 +1183,6 @@ class TestChronDesField:
 
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_CHRON_DES_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1482,15 +1196,9 @@ class TestChronDesField:
     @pytest.mark.parametrize('params',
                              dtn.CHRON_DES_FLD_MAX_LEN[0],
                              ids=dtn.CHRON_DES_FLD_MAX_LEN[1])
-    def test_chron_des_max_len_valid_negotive(self, login_patient, params):
+    def test_chron_des_max_len_valid_negotive(self, login_patient, params, open_chron_des_section):
         """Негативные проверки валидации поля Хронические заболевания по max кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DES_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('CHRON_DES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DES_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -1498,7 +1206,6 @@ class TestChronDesField:
 
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                       f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_CHRON_DES_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1512,15 +1219,9 @@ class TestChronDesField:
     @pytest.mark.parametrize('params',
                              dtp.CHRON_DES_FLD_SYMB[0],
                              ids=dtp.CHRON_DES_FLD_SYMB[1])
-    def test_chron_des_symb_valid_possitive(self, login_patient, params):
+    def test_chron_des_symb_valid_possitive(self, login_patient, params, open_chron_des_section):
         """Позитивные проверки валидации поля Хронические заболевания по типам символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DES_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
-
+        login_patient.get_elem_obj_or_ex('CHRON_DES_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DES_FLD_NM',
                                      params['INPUT'],
                                      'NAME')
@@ -1528,7 +1229,6 @@ class TestChronDesField:
 
         assert inserted == params['INPUT'], (f'введенный текст отображается не так как ожидалось, expected input: '
                                              f'{params["INPUT"]}, fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_CHRON_DES_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1542,14 +1242,8 @@ class TestChronDiscYearField:
     @pytest.mark.parametrize('params',
                             dtp.CHRON_DISC_YEAR_FLD[0],
                             ids=dtp.CHRON_DISC_YEAR_FLD[1])
-    def test_chron_dics_year_valid_possitive(self, login_patient, params):
+    def test_chron_dics_year_valid_possitive(self, login_patient, params, open_chron_des_section):
         """Позитивные проверки валидации поля Год обнаружения (хрон заболевания) по кол-ву символов"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DISC_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DISC_YEAR_FLD_NM',
@@ -1568,14 +1262,8 @@ class TestChronDiscYearField:
     @pytest.mark.parametrize('params',
                             dtn.CHRON_DISC_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[0],
                             ids=dtn.CHRON_DISC_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[1])
-    def test_chron_dics_year_less_than_4_digits_valid_negotive(self, login_patient, params):
+    def test_chron_dics_year_less_than_4_digits_valid_negotive(self, login_patient, params, open_chron_des_section):
         """ПНегативные проверки валидации поля Год обнаружения (хрон заболевания) при вводе менее 4 цифр"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DISC_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DISC_YEAR_FLD_NM',
@@ -1585,7 +1273,6 @@ class TestChronDiscYearField:
 
         assert inserted == params['INPUT'], (f'введенный текст обрезается, expected input: {params["INPUT"]}, '
                                                         f'fact input: {inserted}')
-
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_CHRON_DISC_YEAR_XPATH', 'XPATH').get_attribute('textContent'))
 
@@ -1597,15 +1284,9 @@ class TestChronDiscYearField:
     @pytest.mark.parametrize('params',
                              dtn.CHRON_DISC_YEAR_FLD_CANT_INPUT[0],
                              ids=dtn.CHRON_DISC_YEAR_FLD_CANT_INPUT[1])
-    def test_chron_dics_year_cant_input_valid_negotive(self, login_patient, params):
+    def test_chron_dics_year_cant_input_valid_negotive(self, login_patient, params, open_chron_des_section):
         """Негативные проверки валидации поля Год обнаружения (хрон заболевания) на невозможность ввести символы,
         отличные от цифр"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DISC_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DISC_YEAR_FLD_NM',
@@ -1619,14 +1300,8 @@ class TestChronDiscYearField:
     @pytest.mark.parametrize('params',
                              dtn.CHRON_DISC_YEAR_LEN_MORE_THEN_FOUR_DGT_FLD[0],
                              ids=dtn.CHRON_DISC_YEAR_LEN_MORE_THEN_FOUR_DGT_FLD[1])
-    def test_chron_dics_year_more_than_4_digits_valid_negotive(self, login_patient, params):
+    def test_chron_dics_year_more_than_4_digits_valid_negotive(self, login_patient, params, open_chron_des_section):
         """Негативные проверки валидации поля Год обнаружения (хрон заболевания) на невозможность ввести более 4 цифр"""
-
-        login_patient.click_element('PROFL_BTN_XP',
-                                    'XPATH')
-
-        if not login_patient.check_exists_elem('CHRON_DISC_YEAR_FLD_NM', 'NAME'):
-            login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
 
         login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DISC_YEAR_FLD_NM',
@@ -1634,4 +1309,4 @@ class TestChronDiscYearField:
                                      'NAME')
         inserted = login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').get_attribute('value')
 
-        assert inserted == params['INPUT'][:-1], 'можно ввести более 4 цифр'
+        assert inserted == params['INPUT'][0:4], 'можно ввести более 4 цифр'
