@@ -356,7 +356,7 @@ CHRON_DISC_YEAR_FLD_CANT_INPUT = (
                         ],
                         [
                             'english letters',
-                            'русские буквы',
+                            'кussian letters',
                             'service symbols',
                             'spaces'
                          ],

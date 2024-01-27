@@ -1,4 +1,6 @@
 # Импортируем библиотеку pytest для работы с фикстурами
+import time
+
 import pytest
 # Импортируем библиотеку Selenium WebDriver для работы с веб-драйвером
 from selenium import webdriver
@@ -58,7 +60,7 @@ def browser(request):
         raise Exception("Invalid browser name")
 
     # Устанавливаем время неявного ожидания элементов на странице
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(2)
 
     # Используем инструкцию yield для предоставления веб-драйвера тестам и ожидания завершения тестов
     yield driver
@@ -78,6 +80,7 @@ def login_patient(browser, login_data):
     # Заходим на страницу авторизации
     reg_page.click_element('LOGIN_BTN_XPATH',
                            'XPATH')
+    time.sleep(2)
     # Заполняем поля
     reg_page.fill_the_field('PHONE_FLD_ID',
                             login_data['PHONE'],
