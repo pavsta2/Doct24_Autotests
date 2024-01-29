@@ -86,9 +86,9 @@ class TestLastNameField:
         err_mess = str(login_patient.get_elem_obj_or_ex('ER_MESS_LNAME_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Минимальная длина: 3 символа', (f'Текст ошибки не соответсвует '
+        assert err_mess != '' and err_mess == 'Минимальная длина: 2 символа', (f'Текст ошибки не соответсвует '
                                                                                    f'требованиям, expected mess: '
-                                                                                   f'Минимальная длина: 3 символа, '
+                                                                                   f'Минимальная длина: 2 символа, '
                                                                                     f'fact mess: {err_mess}')
 
     @allure.story('Негативные проверки валидации максимального кол-ва символов')
@@ -104,9 +104,9 @@ class TestLastNameField:
         err_mess = str(login_patient.get_elem_obj_or_ex('ER_MESS_LNAME_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Максимальная длина: 30 символов', (f'Текст ошибки не соответсвует '
+        assert err_mess != '' and err_mess == 'Максимальная длина: 50 символов', (f'Текст ошибки не соответсвует '
                                                                                f'требованиям, expected mess: '
-                                                                               f'Максимальная длина: 30 символов, '
+                                                                               f'Максимальная длина: 50 символов, '
                                                                                f'fact mess: {err_mess}')
 
 @allure.feature('Проверки валидации поля Имя')
@@ -182,9 +182,9 @@ class TestFirstNameField:
         err_mess = str(login_patient.get_elem_obj_or_ex('ER_MESS_FNAME_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Минимальная длина: 3 символа', (f'Текст ошибки не соответсвует '
+        assert err_mess != '' and err_mess == 'Минимальная длина: 2 символа', (f'Текст ошибки не соответсвует '
                                                                                   f'требованиям, expected mess: '
-                                                                                  f'Минимальная длина: 3 символа, '
+                                                                                  f'Минимальная длина: 2 символа, '
                                                                                   f'fact mess: {err_mess}')
 
     @allure.story('Негативные проверки валидации максимального кол-ва символов')
@@ -200,9 +200,9 @@ class TestFirstNameField:
         err_mess = str(login_patient.get_elem_obj_or_ex('ER_MESS_FNAME_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Максимальная длина: 30 символов', (f'Текст ошибки не соответсвует '
+        assert err_mess != '' and err_mess == 'Максимальная длина: 50 символов', (f'Текст ошибки не соответсвует '
                                                                                f'требованиям, expected mess: '
-                                                                               f'Максимальная длина: 30 символов, '
+                                                                               f'Максимальная длина: 50 символов, '
                                                                                f'fact mess: {err_mess}')
 
 
@@ -279,9 +279,9 @@ class TestPatronField:
                 login_patient.get_elem_obj_or_ex('ER_MESS_PATRON_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Минимальная длина: 3 символа', (f'Текст ошибки не соответсвует '
+        assert err_mess != '' and err_mess == 'Минимальная длина: 2 символа', (f'Текст ошибки не соответсвует '
                                                                                f'требованиям, expected mess: '
-                                                                               f'Минимальная длина: 3 символа, '
+                                                                               f'Минимальная длина: 2 символа, '
                                                                                f'fact mess: {err_mess}')
 
     @allure.story('Негативные проверки валидации максимального кол-ва символов')
@@ -298,9 +298,9 @@ class TestPatronField:
                 login_patient.get_elem_obj_or_ex('ER_MESS_PATRON_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Максимальная длина: 30 символов', (f'Текст ошибки не соответсвует '
+        assert err_mess != '' and err_mess == 'Максимальная длина: 50 символов', (f'Текст ошибки не соответсвует '
                                                                                f'требованиям, expected mess: '
-                                                                               f'Максимальная длина: 30 символов, '
+                                                                               f'Максимальная длина: 50 символов, '
                                                                                f'fact mess: {err_mess}')
 
 
@@ -402,6 +402,7 @@ class TestEmailField:
                             ids=dtp.EMAIL_FLD_LEN[1])
     def test_email_len_valid_possitive(self, login_patient, params):
         """Позитивные проверки валидации поля Email по кол-ву символов"""
+        login_patient.screen_shot()
         login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                          params['INPUT'],
@@ -493,6 +494,10 @@ class TestHeightField:
 
         assert inserted == params['INPUT'], (f'Ввод НЕ сохраняется в том виде, в каком ввел юзер, expected: '
                                              f'{params["INPUT"]}, fact: {inserted}')
+        err_mess = str(
+            login_patient.get_elem_obj_or_ex('ER_MESS_HEIGHT_XPATH', 'XPATH').get_attribute('textContent'))
+
+        assert err_mess == '', 'При вводе валидныз данных появляется ошибка'
 
     @allure.story('Негативные проверки валидации поля при воде более 3 цифр в поле Роста')
     @pytest.mark.parametrize('params',
@@ -508,6 +513,7 @@ class TestHeightField:
         inserted = login_patient.get_elem_obj_or_ex('HEIGHT_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'][0:3], (f"Можно ввести невалидные данные, expected: {params['INPUT'][:-1]},"
                                                   f"fact: {inserted}")
+
 
     @allure.story('Негативные проверки валидации поля Роста по типу символов')
     @pytest.mark.parametrize('params',
@@ -538,7 +544,11 @@ class TestWeightField:
                                          params['INPUT'],
                                          'NAME')
         inserted = login_patient.get_elem_obj_or_ex('WEIGHT_FLD_NM', 'NAME').get_attribute('value')
-        assert inserted == params['INPUT'], 'Ввод сохраняется не в том виде, как ввел пользователь'
+        assert inserted == params['INPUT'], (f'Ввод НЕ сохраняется в том виде, в каком ввел юзер, expected: '
+                                             f'{params["INPUT"]}, fact: {inserted}')
+        err_mess = str(
+            login_patient.get_elem_obj_or_ex('ER_MESS_WEIGHT_XPATH', 'XPATH').get_attribute('textContent'))
+        assert err_mess == '', 'При вводе валидныз данных появляется ошибка'
 
     @allure.story('Негативные проверки валидации поля Вес по кол-ву символов')
     @pytest.mark.parametrize('params',
@@ -848,7 +858,7 @@ class TestSurgerieYearField:
                             dtn.SURGERIE_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[0],
                             ids=dtn.SURGERIE_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[1])
     def test_surger_year_len_less_then_4_digits_valid_negotive(self, login_patient, params, open_surgeries_section):
-        """ПНегативные проверки валидации поля Год проведения (операции) при вводе менее 4 цифр"""
+        """Негативные проверки валидации поля Год проведения (операции) при вводе менее 4 цифр"""
 
         login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('SURGERIE_YEAR_FLD_NM',

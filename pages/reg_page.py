@@ -23,14 +23,14 @@ class RegPage:
         # кнопка входя в личный кабинет
         'PROFL_BTN_XP': '//*[@id="root"]/header/div/div/a/img',
         # кнопка добавления информации об аллергии
-        'ALLERGY_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[2]/button',
+        'ALLERGY_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/button',
         # кнопка добавления информации об операции
-        'SURGERIES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[3]/button',
+        'SURGERIES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[4]/button',
         'SURGERIES_BTN_SEL': '#root > section > div > div.content > div > div > div.data > div > form > div:nth-child(3) > div:nth-child(5) > button',
         # кнопка добавления информации о приеме препаратов
-        'MEDICATION_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[4]/button',
+        'MEDICATION_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[5]/button',
         # кнопка добавления информации о хронич заболеваниях
-        'CHRON_DES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[5]/button',
+        'CHRON_DES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[6]/button',
 
         # чекбоксы
         # чекбокс выбора категории пользователя - врач
@@ -65,27 +65,27 @@ class RegPage:
         # поле ввода даты рождения
         'DBIRTH_FLD_NM': 'user.birthday',
         # поле ввода роста
-        'HEIGHT_FLD_NM': 'height',
+        'HEIGHT_FLD_NM': 'patientProfile.height',
         # поле ввода веса
-        'WEIGHT_FLD_NM': 'weight',
+        'WEIGHT_FLD_NM': 'patientProfile.weight',
         # поле аллерген
-        'ALLRGEN_FLD_NM': 'allergies.0.allergen',
+        'ALLRGEN_FLD_NM': 'allergies.0.title',
         # поле Реакиция
-        'REACTION_FLD_NM': 'allergies.0.reaction',
+        'REACTION_FLD_NM': 'allergies.0.value',
         # поле Операции
-        'SURGERIES_FLD_NM': 'postponed_surgeries.0.operation',
+        'SURGERIES_FLD_NM': 'operations.0.description',
         # поле Год проведения (операции)
-        'SURGERIE_YEAR_FLD_NM': 'postponed_surgeries.0.year',
+        'SURGERIE_YEAR_FLD_NM': 'operations.0.date',
         # поле Препарат
-        'MEDICATION_FLD_NM': 'taking_medications.0.preparation',
+        'MEDICATION_FLD_NM': 'medicines.0.title',
         # поле дозировка
-        'DOSAGE_FLD_NM': 'taking_medications.0.dosage',
+        'DOSAGE_FLD_NM': 'medicines.0.dosage',
         # поле периодичность приема
-        'FREQ_OF_TAKING_FLD_NM': 'taking_medications.0.periodicity',
+        'FREQ_OF_TAKING_FLD_NM': 'medicines.0.frequency',
         # поле Хронические заболевания
-        'CHRON_DES_FLD_NM': 'chronic_diseases.0.disease',
+        'CHRON_DES_FLD_NM': 'diseases.0.title',
         # поле Год обнаружения (хронич заболеваний)
-        'CHRON_DISC_YEAR_FLD_NM': 'chronic_diseases.0.year',
+        'CHRON_DISC_YEAR_FLD_NM': 'diseases.0.value',
 
         # сообщения об ошибках
         # сообщение об ошибке валидации поля фамилия
@@ -97,25 +97,29 @@ class RegPage:
         # сообщение об ошибке валидации поля Дата рождения
         'ER_MESS_DBIRTH_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[4]/p',
         # сообщение об ошибке валидации поля Email
-        'ER_MESS_EMAIL_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/label[2]/p',
+        'ER_MESS_EMAIL_XPATH': '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[5]/p',
+        # сообщение об ошибке валидации поля Рост
+        'ER_MESS_HEIGHT_XPATH': '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/label[1]/p',
+        # сообщение обошибке валидации поля Вес
+        'ER_MESS_WEIGHT_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/label[2]/p',
         # сообщение об ошибке валидации поля Аллерген
-        'ER_MESS_ALLERGEN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[2]/div/label[1]/p',
+        'ER_MESS_ALLERGEN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div/label/p',
         # сообщение об ошибке валидации поля Реакция
-        'ER_MESS_REACTION_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[2]/div/label[2]/p',
+        'ER_MESS_REACTION_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div/div/label/p',
         # сообщение об ошибке валидации поля Операции
-        'ER_MESS_SURGERIES_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[3]/div/label[1]/p',
+        'ER_MESS_SURGERIES_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[4]/div/label/p',
         # сообщение об ошибке валидации поля Год проведения(операции)
-        'ER_MESS_SURGERIE_YEAR_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[3]/div/label[2]/p',
+        'ER_MESS_SURGERIE_YEAR_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[4]/div/div/label/p',
         # сообщение об ошибке валидации поля Препарат
-        'ER_MESS_MEDICATION_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[4]/div/label[1]/p',
+        'ER_MESS_MEDICATION_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[5]/div/label[1]/p',
         # сообшение об ошибке валидации поля Дозировка
-        'ER_MESS_DOSAGE_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[4]/div/label[2]/p',
+        'ER_MESS_DOSAGE_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[5]/div/label[2]/p',
         # сообщение об ошибке валидации поля периодичность приема
-        'ER_MESS_FREQ_OF_TKNG_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[4]/div/label[3]/p',
+        'ER_MESS_FREQ_OF_TKNG_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[5]/div/div/label/p',
         # сообщение об ошибке валидации поля Хронич заболевания
-        'ER_MESS_CHRON_DES_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[5]/div/label[1]/p',
+        'ER_MESS_CHRON_DES_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[6]/div/label/p',
         # сообщение об ошибке валидации поля Год обнаружения (хронич заболевания)
-        'ER_MESS_CHRON_DISC_YEAR_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div[5]/div/label[2]/p',
+        'ER_MESS_CHRON_DISC_YEAR_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[6]/div/div/label/p',
 
         # прочие элементы
         # задний блок на странице профиля (для клика, что снять фокус с полей)
@@ -154,7 +158,7 @@ class RegPage:
     def get_elem_obj_or_ex(self, elem_locator: str, find_meth: str):
         """Функция для получения объекта элемента"""
         elem_obj = None
-        # time.sleep(0.2)
+        time.sleep(0.2)
         if find_meth == 'ID':
             elem_obj = self.driver.find_element(By.ID, self.locators[elem_locator])
         elif find_meth == 'CLASS_NAME':

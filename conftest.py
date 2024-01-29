@@ -40,9 +40,9 @@ def browser(request):
     if browser == "chrome":
         options = Options()
         options.add_argument('--headless')
-        options.add_argument("--window-size=2800,1900")
+        options.add_argument("--window-size=2800,1200")
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
-        options.add_experimental_option("useAutomationExtension", False)
+        # options.add_experimental_option("useAutomationExtension", False)
         options.page_load_strategy = 'normal'
         service = ChromeService()
         driver = webdriver.Chrome(service=service, options=options)
@@ -118,69 +118,69 @@ def login_patient(browser, login_data):
 
 
 # фикстура для нажатия на кнопку Добавить аллергию
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=False)
 def open_allegry_section(browser, login_patient):
     login_patient.click_element('ALLERGY_BTN_XPATH', 'XPATH')
 
 
 # фикстура для нажатия на кнопку Добавить операцию
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=False)
 def open_surgeries_section(browser, login_patient):
     login_patient.click_element('SURGERIES_BTN_XPATH', 'XPATH')
 
 
 # фикстура для нажатия на кнопку Добавить операцию
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=False)
 def open_medication_section(browser, login_patient):
     login_patient.click_element('MEDICATION_BTN_XPATH', 'XPATH')
 
 
 # фикстура для нажатия на кнопку Добавить заболевание
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=False)
 def open_chron_des_section(browser, login_patient):
     login_patient.click_element('CHRON_DES_BTN_XPATH', 'XPATH')
 
-
-def get_test_case_docstring(item):
-    """ Эта функция получает текст из doc string функции и форматирует ее
-    для показа в качестве названия теста в отчете.
-    """
-    full_name = ''
-
-    if item._obj.__doc__:
-        # Удаляем лишние пробелы из текущего названия:
-        name = str(item._obj.__doc__.split('.')[0]).strip()
-        full_name = ' '.join(name.split())
-
-        # Генерируем список параметров для тестов с параметризацией:
-        if hasattr(item, 'callspec'):
-            params = item.callspec.params
-            # создаем список
-            res_keys = sorted([k for k in params])
-            # Создаем словарь:
-            res = ['{0}_"{1}"'.format(k, params[k]) for k in res_keys]
-            # Добавляем словарь со всеми параметрами к названию теста:
-            full_name += ' Parameters ' + str(', '.join(res))
-            full_name = full_name.replace(':', '')
-
-    return full_name
-
-
-def pytest_itemcollected(item):
-    """ Эта функция подменят название теста на результат функции get_test_case_docstring во время его исполнения."""
-    if item._obj.__doc__:
-        item._nodeid = get_test_case_docstring(item)
-
-
-def pytest_collection_finish(session):
-    """ Эта функция модифицирует названия тестов при вызове --collect-only параметра
-        (получения списка всех имеющихся тестов).
-    """
-    if session.config.option.collectonly is True:
-        for item in session.items:
-            if item._obj.__doc__:
-                full_name = get_test_case_docstring(item)
-                print(full_name)
-
-        pytest.exit('Done!')
+#
+# def get_test_case_docstring(item):
+#     """ Эта функция получает текст из doc string функции и форматирует ее
+#     для показа в качестве названия теста в отчете.
+#     """
+#     full_name = ''
+#
+#     if item._obj.__doc__:
+#         # Удаляем лишние пробелы из текущего названия:
+#         name = str(item._obj.__doc__.split('.')[0]).strip()
+#         full_name = ' '.join(name.split())
+#
+#         # Генерируем список параметров для тестов с параметризацией:
+#         if hasattr(item, 'callspec'):
+#             params = item.callspec.params
+#             # создаем список ключей
+#             res_keys = sorted([k for k in params])
+#             # Создаем cписок:
+#             res = ['{0}_"{1}"'.format(k, params[k]) for k in res_keys]
+#             # Добавляем словарь со всеми параметрами к названию теста:
+#             full_name += ' Parameters ' + str(', '.join(res))
+#             full_name = full_name.replace(':', '')
+#
+#     return full_name
+#
+#
+# def pytest_itemcollected(item):
+#     """ Эта функция подменят название теста на результат функции get_test_case_docstring во время его исполнения."""
+#     if item._obj.__doc__:
+#         item._nodeid = get_test_case_docstring(item)
+#
+#
+# def pytest_collection_finish(session):
+#     """ Эта функция модифицирует названия тестов при вызове --collect-only параметра
+#         (получения списка всех имеющихся тестов).
+#     """
+#     if session.config.option.collectonly is True:
+#         for item in session.items:
+#             if item._obj.__doc__:
+#                 full_name = get_test_case_docstring(item)
+#                 print(full_name)
+#
+#         pytest.exit('Done!')
 
