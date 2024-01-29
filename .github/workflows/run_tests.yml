@@ -5,9 +5,12 @@ on:
     inputs:
       deployment_target:
         description: Choose target
-        required: false
+        required: true
         default:
-
+        type: choice
+        options:
+          - patient profile autotests
+          - doctor profile autotests
 
 jobs:
   test:
@@ -25,5 +28,9 @@ jobs:
 #        run: sudo apt get install google-chrome
       - name: Install dependensies
         run: pip install -r requirements.txt
-      - name: Run test
-        run: pytest -v
+      - name: patient profile autotests
+        if: "github.event.inputs.deployment_target == 'patient profile autotests'"
+        run: pytest -v tests/test_reg_page.py
+      - name: doctor profile autotests
+        if: "github.event.inputs.deployment_target == 'doctor profile autotests'"
+        run: pytest -v tests/test_reg_page.py
