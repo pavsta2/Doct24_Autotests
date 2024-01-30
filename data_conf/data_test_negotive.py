@@ -224,6 +224,15 @@ SURGERIE_YEAR_FLD_CANT_INPUT = (
                          ],
                         )
 
+SURGERIE_YEAR_FLD_1950 = (
+                        [
+                            {'INPUT': '1949'}
+                        ],
+                        [
+                            '1949'
+                         ],
+                        )
+
 # Данные для поля Препарат
 MEDICATION_FLD_MIN_LEN = (
                         [
@@ -359,5 +368,14 @@ CHRON_DISC_YEAR_FLD_CANT_INPUT = (
                             'кussian letters',
                             'service symbols',
                             'spaces'
+                         ],
+                        )
+
+CHRON_DISC_YEAR_FLD_1950 = (
+                        [
+                            {'INPUT': '1949'}
+                        ],
+                        [
+                            '1949'
                          ],
                         )

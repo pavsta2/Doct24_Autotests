@@ -873,7 +873,8 @@ class TestSurgerieYearField:
             login_patient.get_elem_obj_or_ex('ER_MESS_SURGERIE_YEAR_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Неверный формат года', 'Текст ошибки не соответсвует требованиям'
+        assert err_mess != '' and err_mess == 'Некорректная дата', (f'Текст ошибки не соответсвует требованиям, '
+                                                                    f'expected: "Некорректная дата", fact:{err_mess}')
 
     @allure.story('Негативные проверки валидации поля Год проведения (операции) на невозможность ввести символы, '
                   'отличные от цифр')
@@ -905,6 +906,27 @@ class TestSurgerieYearField:
         inserted = login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').get_attribute('value')
         assert inserted == params['INPUT'][0:4], (f'Можно ввести более 4 цифр, expected {params["INPUT"][0:4]},'
                                                   f'fact: {inserted}')
+
+    @allure.story('Негативные проверки валидации поля Год проведения (операции) ранее 1950 года')
+    @pytest.mark.parametrize('params',
+                             dtn.SURGERIE_YEAR_FLD_1950[0],
+                             ids=dtn.SURGERIE_YEAR_FLD_1950[1])
+    def test_surger_year_earlier_then_1950_negotive(self, login_patient, params, open_surgeries_section):
+        """Негативные проверки валидации поля Год проведения (операции) ранее 1950 года"""
+
+        login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').clear()
+        login_patient.fill_the_field('SURGERIE_YEAR_FLD_NM',
+                                     params['INPUT'],
+                                     'NAME')
+        inserted = login_patient.get_elem_obj_or_ex('SURGERIE_YEAR_FLD_NM', 'NAME').get_attribute('value')
+        assert inserted == params['INPUT'], 'ввод не сохраняется в том виде, как ввел пользователь'
+
+        err_mess = str(
+            login_patient.get_elem_obj_or_ex('ER_MESS_SURGERIE_YEAR_XPATH', 'XPATH').get_attribute('textContent'))
+        assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
+        assert err_mess != '' and err_mess == 'Дата не может быть ранее 1950 года', (
+            f'Текст ошибки не соответсвует требованиям, '
+            f'expected: "Дата не может быть ранее 1950 года", fact:{err_mess}')
 
 
 @allure.feature('Проверки валидации поля Препарат')
@@ -1287,7 +1309,7 @@ class TestChronDiscYearField:
             login_patient.get_elem_obj_or_ex('ER_MESS_CHRON_DISC_YEAR_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Неверный формат года', 'Текст ошибки не соответсвует требованиям'
+        assert err_mess != '' and err_mess == 'Некорректная дата', 'Текст ошибки не соответсвует требованиям'
 
     @allure.story('Негативные проверки валидации поля Год обнаружения (хрон заболевания) на невозможность ввести символы, '
                   'отличные от цифр')
@@ -1320,3 +1342,24 @@ class TestChronDiscYearField:
         inserted = login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').get_attribute('value')
 
         assert inserted == params['INPUT'][0:4], 'можно ввести более 4 цифр'
+
+    @allure.story(
+        'Негативные проверки валидации поля Год обнаружения (хрон заболевания) ранее 1950 года')
+    @pytest.mark.parametrize('params',
+                             dtn.CHRON_DISC_YEAR_FLD_1950[0],
+                             ids=dtn.CHRON_DISC_YEAR_FLD_1950[1])
+    def test_chron_dics_year_earlier_then_1950_negotive(self, login_patient, params, open_chron_des_section):
+        """Негативные проверки валидации поля Год обнаружения (хрон заболевания) ранее 1950 года"""
+
+        login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').clear()
+        login_patient.fill_the_field('CHRON_DISC_YEAR_FLD_NM',
+                                     params['INPUT'],
+                                     'NAME')
+        inserted = login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').get_attribute('value')
+        assert inserted == params['INPUT'], 'ввод не сохраняется в том виде, как ввел пользователь'
+
+        err_mess = str(
+            login_patient.get_elem_obj_or_ex('ER_MESS_CHRON_DISC_YEAR_XPATH', 'XPATH').get_attribute('textContent'))
+        assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
+        assert err_mess != '' and err_mess == 'Дата не может быть ранее 1950 года', (f'Текст ошибки не соответсвует требованиям, '
+                                                                    f'expected: "Дата не может быть ранее 1950 года", fact:{err_mess}')
