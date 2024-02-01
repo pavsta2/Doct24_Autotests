@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
+        uses: browser-actions/setup-chrome@v2
 #        run: sudo apt get install google-chrome
       - name: Install dependensies
         run: pip install -r requirements.txt
