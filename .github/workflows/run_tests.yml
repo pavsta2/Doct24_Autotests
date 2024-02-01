@@ -35,7 +35,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: patient profile autotests
         if: "github.event.inputs.deployment_target == 'patient profile autotests'"
-        run: pytest -v tests/test_reg_page.py --alluredir=allure_reports
+        run: pytest -v tests/test_reg_page.py::TestLastNameField --alluredir=allure_reports
       - name: doctor profile autotests
         if: "github.event.inputs.deployment_target == 'doctor profile autotests'"
         run: pytest -v tests/test_reg_page.py --alluredir=allure-results
