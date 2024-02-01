@@ -340,7 +340,7 @@ class TestDBirthField:
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DBIRTH_XPATH', 'XPATH').get_attribute('textContent'))
 
-        assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
+        assert err_mess != '', 'При вводе невалидной даты ошибки не возникает '
         assert err_mess != '' and err_mess == 'Некорректная дата', (f'Текст ошибки не соответсвует '
                                                                                f'требованиям, expected mess: '
                                                                                f'Некорректная дата, '
