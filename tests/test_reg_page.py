@@ -14,7 +14,7 @@ from datetime import timedelta
 
 @allure.feature('Проверки валидации поля Фамилия')
 class TestLastNameField:
-    @allure.story('Позитивные проверки валидации фамилии поо кол-ву символов')
+    @allure.story('Позитивные проверки валидации фамилии по кол-ву символов')
     @pytest.mark.parametrize('params',
                             dtp.ALLNAME_FLD_LEN_POSSITIVE[0],
                             ids=dtp.ALLNAME_FLD_LEN_POSSITIVE[1])
@@ -426,12 +426,12 @@ class TestEmailField:
             login_patient.get_elem_obj_or_ex('ER_MESS_EMAIL_XPATH', 'XPATH').get_attribute('textContent'))
         assert err_mess == '', 'При вводе валидных данный появляется ошибка'
 
-    @allure.story('Негативные проверки валидации email по кол-ву симовлов')
+    @allure.story('Негативные проверки валидации email по минимальному кол-ву символов')
     @pytest.mark.parametrize('params',
-                             dtn.EMAIL_FLD_LEN[0],
-                             ids=dtn.EMAIL_FLD_LEN[1])
+                             dtn.EMAIL_FLD_MIN_LEN[0],
+                             ids=dtn.EMAIL_FLD_MIN_LEN[1])
     def test_email_len_valid_negotive(self, login_patient, params):
-        """Негативные проверки валидации поля Email по кол-ву символов"""
+        """Негативные проверки валидации поля Email по минимальному кол-ву символов"""
         login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                      params['INPUT'],
@@ -440,9 +440,27 @@ class TestEmailField:
             login_patient.get_elem_obj_or_ex('ER_MESS_EMAIL_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Длина E-mail не может быть менее 6 и более 70 символов', \
-            (f'Текст ошибки не соответсвует требованиям, expected mess: Длина E-mail не может быть менее 6 и более'
-             f'70 символов, fact mess: {err_mess}')
+        assert err_mess != '' and err_mess == 'В поле должно быть минимум 6 символов', \
+            (f'Текст ошибки не соответсвует требованиям, expected mess: "В поле должно быть минимум 6 символов",'
+             f'fact mess: "{err_mess}"')
+
+    @allure.story('Негативные проверки валидации email по максимальному кол-ву символов')
+    @pytest.mark.parametrize('params',
+                             dtn.EMAIL_FLD_MAX_LEN[0],
+                             ids=dtn.EMAIL_FLD_MAX_LEN[1])
+    def test_email_len_valid_negotive(self, login_patient, params):
+        """Негативные проверки валидации поля Email по максимальному кол-ву символов"""
+        login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
+        login_patient.fill_the_field('EMAIL_FLD_NM',
+                                     params['INPUT'],
+                                     'NAME')
+        err_mess = str(
+            login_patient.get_elem_obj_or_ex('ER_MESS_EMAIL_XPATH', 'XPATH').get_attribute('textContent'))
+
+        assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
+        assert err_mess != '' and err_mess == 'В поле должно быть максимум 70 символов', \
+            (f'Текст ошибки не соответсвует требованиям, expected mess: "В поле должно быть максимум 70 символов",'
+             f'fact mess: "{err_mess}"')
 
     @allure.story('Негативные проверки валидации email по маске')
     @pytest.mark.parametrize('params',

@@ -43,14 +43,21 @@ DBIRTH_FLD_UNVALID = (
                         )
 
 # Данные для поля E-mail
-EMAIL_FLD_LEN = (
+EMAIL_FLD_MIN_LEN = (
                         [
-                            {'INPUT': 'i@f.r'},
+                            {'INPUT': 'i@f.r'}
+                        ],
+                        [
+                            '5 symbols'
+                         ]
+                        )
+
+EMAIL_FLD_MAX_LEN = (
+                        [
                             {'INPUT': 'ivanofffffivanofffffivanofffffivanofffffivanofffffivanofffffi@infoo.com'},
                             {'INPUT': 'ivanofffffivanofffffivanofffffivanofffffivanofffffivanofffffivanofffff@infoo.com'}
                         ],
                         [
-                            '5 symbols',
                             '71 symbols',
                             '80 symbols'
                          ]
