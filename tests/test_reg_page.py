@@ -1313,7 +1313,7 @@ class TestChronDiscYearField:
                             dtn.CHRON_DISC_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[0],
                             ids=dtn.CHRON_DISC_YEAR_LEN_LESS_THEN_FOUR_DGT_FLD[1])
     def test_chron_dics_year_less_than_4_digits_valid_negotive(self, login_patient, params, open_chron_des_section):
-        """ПНегативные проверки валидации поля Год обнаружения (хрон заболевания) при вводе менее 4 цифр"""
+        """Негативные проверки валидации поля Год обнаружения (хрон заболевания) при вводе менее 4 цифр"""
 
         login_patient.get_elem_obj_or_ex('CHRON_DISC_YEAR_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('CHRON_DISC_YEAR_FLD_NM',
