@@ -12,6 +12,11 @@ on:
           - patient profile autotests
           - doctor profile autotests
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
