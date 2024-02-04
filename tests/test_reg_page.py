@@ -378,7 +378,7 @@ class TestDBirthField:
 
     @allure.story('Негативная проверка ввода даты рождения при которой юзер младше 18 лет')
     def test_birthdate_less_then_18(self, login_patient):
-        """Позитивные проверки ввода даты рождения, при которой юзер младше 18"""
+        """Негативная проверка ввода даты рождения при которой юзер младше 18 лет"""
         # очищаем поле
         login_patient.get_elem_obj_or_ex('DBIRTH_FLD_NM', 'NAME').clear()
         birthdate_to_test = (login_patient.get_date_18_years_ago() + timedelta(days=1)).strftime("%d/%m/%Y")
@@ -388,11 +388,10 @@ class TestDBirthField:
         err_mess = str(
             login_patient.get_elem_obj_or_ex('ER_MESS_DBIRTH_XPATH', 'XPATH').get_attribute('textContent'))
 
-        assert err_mess == 'Нельзя зарегистрироваться на сайте, если Вам меньше 18 лет'
-        assert err_mess != '', 'При вводе невалидного кол-ва символов ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Нелья зарегистрироваться на сайте, если Вам меньше 18 лет', \
-            (f'Текст ошибки не соответсвует требованиям, expected mess: Нельзя зарегистрироваться на сайте, если Вам'
-             f'меньше 18 лет, fact mess: {err_mess}')
+        assert err_mess != '', 'При вводе даты рождения, при которой юзер младше 18 лет, ошибки не возникает '
+        assert err_mess != '' and err_mess == 'Нелзья зарегистрироваться на сайте, если Вам меньше 18 лет', \
+            (f'Текст ошибки не соответсвует требованиям, expected mess: "Нельзя зарегистрироваться на сайте, если Вам'
+             f'меньше 18 лет", fact mess: "{err_mess}"')
 
 @allure.feature('Проверки валидации поля Email')
 class TestEmailField:

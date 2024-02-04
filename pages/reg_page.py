@@ -95,11 +95,11 @@ class RegPage:
         # сообщение об ошибке валидации поля отчество
         'ER_MESS_PATRON_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[3]/p',
         # сообщение об ошибке валидации поля Дата рождения
-        'ER_MESS_DBIRTH_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[4]/p',
+        'ER_MESS_DBIRTH_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[1]/div[1]/label/p',
         # сообщение об ошибке валидации поля Email
-        'ER_MESS_EMAIL_XPATH': '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[5]/p',
+        'ER_MESS_EMAIL_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[5]/p',
         # сообщение об ошибке валидации поля Рост
-        'ER_MESS_HEIGHT_XPATH': '/html/body/div[1]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/label[1]/p',
+        'ER_MESS_HEIGHT_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/label[1]/p',
         # сообщение обошибке валидации поля Вес
         'ER_MESS_WEIGHT_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/label[2]/p',
         # сообщение об ошибке валидации поля Аллерген
