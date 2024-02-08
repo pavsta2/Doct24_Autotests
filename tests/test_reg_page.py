@@ -389,7 +389,7 @@ class TestDBirthField:
             login_patient.get_elem_obj_or_ex('ER_MESS_DBIRTH_XPATH', 'XPATH').get_attribute('textContent'))
 
         assert err_mess != '', 'При вводе даты рождения, при которой юзер младше 18 лет, ошибки не возникает '
-        assert err_mess != '' and err_mess == 'Нелзья зарегистрироваться на сайте, если Вам меньше 18 лет', \
+        assert err_mess != '' and err_mess == 'Нельзя зарегистрироваться на сайте, если Вам меньше 18 лет', \
             (f'Текст ошибки не соответсвует требованиям, expected mess: "Нельзя зарегистрироваться на сайте, если Вам'
              f' меньше 18 лет", fact mess: "{err_mess}"')
 
