@@ -11,6 +11,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 
 from pages.reg_page import RegPage
 from config import URL_LOGIN
+from locators import locators_patient, locators_doctor
 
 
 # Регистрируем метод для возможности параметризации браузера при запуске
@@ -20,7 +21,7 @@ def pytest_addoption(parser):
 
 
 # Создаем фикстуру с областью видимости "session" для задания данных для авторизации
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session", autouse=False)
 def login_data():
     return {
         "PHONE": "9113459832",
@@ -32,7 +33,7 @@ def login_data():
 
 
 # Создаем фикстуру с областью видимости "session" для создания и закрытия веб-драйвера
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session", autouse=False)
 def browser(request):
     # получаем параметр введенный в терминале
     browser = request.config.getoption("--browser")
@@ -69,12 +70,12 @@ def browser(request):
     driver.quit()
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="session", autouse=False)
 def login_patient(browser, login_data):
     """Авторизация и вход в профиль"""
 
     # Создаем экземпляр RegPage, передавая веб-драйвер (фикстура browser) в качестве аргумента
-    reg_page = RegPage(browser)
+    reg_page = RegPage(browser, locators_patient.locators)
     # Открываем страницу с помощью веб-драйвера
     browser.get(URL_LOGIN)
     # Заходим на страницу авторизации
@@ -87,7 +88,55 @@ def login_patient(browser, login_data):
                             'ID')
     reg_page.click_element('PATIENT_CHK_BX_SEL',
                            'SELECTOR')
-    reg_page.click_element('GRMT_CHK_BX_XPATH',
+    reg_page.click_element('AGRMT_CHK_BX_XPATH',
+                           'XPATH')
+    # нажимаем на кнопку Далее
+    reg_page.click_element("NXT_BTN_XPATH1",
+                           'XPATH')
+    # вносим проверочный код
+    reg_page.fill_the_field('CODE_1_NM',
+                            login_data['CODE_1'],
+                            'NAME')
+    reg_page.fill_the_field('CODE_2_NM',
+                            login_data['CODE_2'],
+                            'NAME')
+    reg_page.fill_the_field('CODE_3_NM',
+                            login_data['CODE_3'],
+                            'NAME')
+    reg_page.fill_the_field('CODE_4_NM',
+                            login_data['CODE_4'],
+                            'NAME')
+    # нажимаем кнопку
+    reg_page.click_element("NXT_BTN_XPATH2",
+                           'XPATH')
+    time.sleep(1)
+    # переходим в профиль
+    reg_page.click_element('PROFL_BTN_XP',
+                           'XPATH')
+    time.sleep(1)
+
+    return reg_page
+
+
+@pytest.fixture(scope="session", autouse=False)
+def login_doctor(browser, login_data):
+    """Авторизация и вход в профиль"""
+
+    # Создаем экземпляр RegPage, передавая веб-драйвер (фикстура browser) в качестве аргумента
+    reg_page = RegPage(browser, locators_doctor.locators)
+    # Открываем страницу с помощью веб-драйвера
+    browser.get(URL_LOGIN)
+    # Заходим на страницу авторизации
+    reg_page.click_element('LOGIN_BTN_XPATH',
+                           'XPATH')
+    time.sleep(1)
+    # Заполняем поля
+    reg_page.fill_the_field('PHONE_FLD_ID',
+                            login_data['PHONE'],
+                            'ID')
+    reg_page.click_element('DOCTOR_CHK_BX_SEL',
+                           'SELECTOR')
+    reg_page.click_element('AGRMT_CHK_BX_XPATH',
                            'XPATH')
     # нажимаем на кнопку Далее
     reg_page.click_element("NXT_BTN_XPATH1",

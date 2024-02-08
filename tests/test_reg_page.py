@@ -391,7 +391,8 @@ class TestDBirthField:
         assert err_mess != '', 'При вводе даты рождения, при которой юзер младше 18 лет, ошибки не возникает '
         assert err_mess != '' and err_mess == 'Нелзья зарегистрироваться на сайте, если Вам меньше 18 лет', \
             (f'Текст ошибки не соответсвует требованиям, expected mess: "Нельзя зарегистрироваться на сайте, если Вам'
-             f'меньше 18 лет", fact mess: "{err_mess}"')
+             f' меньше 18 лет", fact mess: "{err_mess}"')
+
 
 @allure.feature('Проверки валидации поля Email')
 class TestEmailField:
@@ -466,7 +467,7 @@ class TestEmailField:
                              dtn.EMAIL_FLD_MASK[0],
                              ids=dtn.EMAIL_FLD_MASK[1])
     def test_email_mask_valid_negotive(self, login_patient, params):
-        """Негативные проверки валидации поля Email по кол-ву символов"""
+        """Негативные проверки валидации поля Email по маске"""
         login_patient.get_elem_obj_or_ex('EMAIL_FLD_NM', 'NAME').clear()
         login_patient.fill_the_field('EMAIL_FLD_NM',
                                      params['INPUT'],
