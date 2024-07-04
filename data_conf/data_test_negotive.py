@@ -329,13 +329,14 @@ CHRON_DES_FLD_MIN_LEN = (
 CHRON_DES_FLD_MAX_LEN = (
                         [
                             {'INPUT': '12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345'
-                                      'qwert12345qwert12345qwert1'},
+                                      'qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert'
+                                      '12345qwert12345qwert12345qwert12345qwert12345qwert1'},
                             {'INPUT': '12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert'
                                       '12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert'
                                       '12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert12345qwert'}
                         ],
                         [
-                            '101 symbols',
+                            '201 symbols',
                             '240 symbols'
                          ],
                         )
@@ -372,7 +373,7 @@ CHRON_DISC_YEAR_FLD_CANT_INPUT = (
                         ],
                         [
                             'english letters',
-                            'кussian letters',
+                            'russian letters',
                             'service symbols',
                             'spaces'
                          ],

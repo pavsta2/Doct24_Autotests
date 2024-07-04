@@ -74,7 +74,7 @@ jobs:
         run: pytest -v tests/test_reg_page.py --alluredir=allure-results
       - name: doctor profile autotests
         if: "github.event.inputs.deployment_target == 'doctor profile autotests'"
-        run: pytest -v tests/test_reg_page.py --alluredir=allure-results
+        run: pytest -v tests/test_reg_page_doc.py --alluredir=allure-results
       - name: Store allure results
         if: always()
         uses: actions/upload-artifact@v4

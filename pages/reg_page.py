@@ -3,11 +3,10 @@ import time, datetime
 from selenium.webdriver.common.by import By
 from datetime import timedelta
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-from locators import locators_patient
 
 
 # Регистрируем класс, который будет описывать вэб страницу
@@ -44,7 +43,7 @@ class RegPage:
     def get_elem_obj_or_ex(self, elem_locator: str, find_meth: str):
         """Функция для получения объекта элемента"""
         elem_obj = None
-        time.sleep(0.3)
+        time.sleep(0.1)
         if find_meth == 'ID':
             elem_obj = self.driver.find_element(By.ID, self.locators[elem_locator])
         elif find_meth == 'CLASS_NAME':
@@ -60,7 +59,8 @@ class RegPage:
         else:
             return False
 
-    def get_date_18_years_ago(self):
+    @staticmethod
+    def get_date_18_years_ago():
         """Функция для получения даты 18 лет назад от текущей"""
         present_date = datetime.datetime.now().strftime("%d/%m/%Y")
         present_y = int(present_date[-4:])
@@ -103,3 +103,41 @@ class RegPage:
 # метод скроллит страницу
     def scroll_by_pix(self):
         self.driver.execute_script("window.scrollBy(0,100)", "")
+
+# метод для очистки полей
+    def clear_field(self, elem_locator: str, find_meth: str):
+        if find_meth == 'ID':
+            self.driver.find_element(By.ID, self.locators[elem_locator]).send_keys(Keys.COMMAND, 'a')
+            self.driver.find_element(By.ID, self.locators[elem_locator]).send_keys(Keys.COMMAND + 'a')
+            time.sleep(0.1)
+            self.driver.find_element(By.ID, self.locators[elem_locator]).send_keys(Keys.BACK_SPACE)
+            # self.driver.find_element(By.ID, self.locators[elem_locator]).send_keys(Keys.DELETE)
+            # self.driver.find_element(By.ID, self.locators[elem_locator]).clear()
+        elif find_meth == 'CLASS_NAME':
+            self.driver.find_element(By.CLASS_NAME, self.locators[elem_locator]).send_keys(Keys.COMMAND, 'a')
+            self.driver.find_element(By.CLASS_NAME, self.locators[elem_locator]).send_keys(Keys.COMMAND + 'a')
+            time.sleep(0.1)
+            self.driver.find_element(By.CLASS_NAME, self.locators[elem_locator]).send_keys(Keys.BACK_SPACE)
+            # self.driver.find_element(By.CLASS_NAME, self.locators[elem_locator]).send_keys(Keys.DELETE)
+            # self.driver.find_element(By.CLASS_NAME, self.locators[elem_locator]).clear()
+        elif find_meth == 'SELECTOR':
+            self.driver.find_element(By.CSS_SELECTOR, self.locators[elem_locator]).send_keys(Keys.COMMAND, 'a')
+            self.driver.find_element(By.CSS_SELECTOR, self.locators[elem_locator]).send_keys(Keys.COMMAND + 'a')
+            time.sleep(0.1)
+            self.driver.find_element(By.CSS_SELECTOR, self.locators[elem_locator]).send_keys(Keys.BACK_SPACE)
+            # self.driver.find_element(By.CSS_SELECTOR, self.locators[elem_locator]).send_keys(Keys.DELETE)
+            # self.driver.find_element(By.CSS_SELECTOR, self.locators[elem_locator]).clear()
+        elif find_meth == 'XPATH':
+            self.driver.find_element(By.XPATH, self.locators[elem_locator]).send_keys(Keys.COMMAND, 'a')
+            self.driver.find_element(By.XPATH, self.locators[elem_locator]).send_keys(Keys.COMMAND + 'a')
+            time.sleep(0.1)
+            self.driver.find_element(By.XPATH, self.locators[elem_locator]).send_keys(Keys.BACK_SPACE)
+            # self.driver.find_element(By.XPATH, self.locators[elem_locator]).send_keys(Keys.DELETE)
+            # self.driver.find_element(By.XPATH, self.locators[elem_locator]).clear()
+        elif find_meth == 'NAME':
+            self.driver.find_element(By.NAME, self.locators[elem_locator]).send_keys(Keys.COMMAND, 'a')
+            self.driver.find_element(By.NAME, self.locators[elem_locator]).send_keys(Keys.COMMAND + 'a')
+            time.sleep(0.1)
+            self.driver.find_element(By.NAME, self.locators[elem_locator]).send_keys(Keys.BACK_SPACE)
+            # self.driver.find_element(By.NAME, self.locators[elem_locator]).send_keys(Keys.DELETE)
+            # self.driver.find_element(By.NAME, self.locators[elem_locator]).clear()

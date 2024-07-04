@@ -6,25 +6,32 @@ locators = {
     'LOGIN_BTN_XPATH': '//*[@id="root"]/header/div/div/a',
     # кнопка далее
     "NXT_BTN_CLS": 'btn',
-    'NXT_BTN_XPATH1': '//*[@id="root"]/div/div/div/div/form/div[2]/button',
-    'NXT_BTN_XPATH2': '/html/body/div[1]/div/div/div/div/form/div[3]/button',
+    'NXT_BTN_XPATH1': '//*[@id="root"]/div/div/div/div/form/button',
+    'NXT_BTN_XPATH2': '//*[@id="root"]/div/div/div/div/form/div[3]/button',
+    'NXT_BTN_XPATH3': '//*[@id="root"]/div/div/div/div/form/button',
+    'NXT_BTN_XPATH4': '//*[@id="root"]/div/div/div/div/form/div[3]/button',
     # кнопка входя в личный кабинет
     'PROFL_BTN_XP': '//*[@id="root"]/header/div/div/a/img',
     # кнопка добавления информации об аллергии
     'ALLERGY_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/button',
+    'ALLERGY_BTN_DEL_XP': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div/button',
     # кнопка добавления информации об операции
     'SURGERIES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[4]/button',
-    'SURGERIES_BTN_SEL': '#root > section > div > div.content > div > div > div.data > div > form > div:nth-child(3) > div:nth-child(5) > button',
+    'SURGERIES_BTN_SEL': '#root > section > div > div.content > div > div > div.data > div > form > div:nth-child(3) > '
+                         'div:nth-child(5) > button',
+    'SURGERIES_DEL_BTN_XP': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[4]/div/button',
     # кнопка добавления информации о приеме препаратов
     'MEDICATION_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[5]/button',
+    'MEDICATION_DEL_BTN_XP': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[5]/div/button',
     # кнопка добавления информации о хронич заболеваниях
     'CHRON_DES_BTN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[6]/button',
+    'CHRON_DES_DEL_BTN_XP': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[6]/div/button',
 
     # чекбоксы
     # чекбокс выбора категории пользователя - врач
     'DOC_CHK_BX_SEL': '#root > div > div > div > div > div > label:nth-child(3) > img',
     # чекбокс выбора категории пользователя - пациент
-    'PATIENT_CHK_BX_SEL': '#root > div > div > div > div > div > label:nth-child(2) > img',
+    'PATIENT_CHK_BX_SEL': '#root > div > div > div > div > div > label:nth-child(2) > div',
     # чекбокс выбора категории пользователя - доктор
     'DOCTOR_CHK_BX_SEL': '#root > div > div > div > div > div > label:nth-child(2) > img',
     # чекбокс принятия соглашения
@@ -32,6 +39,8 @@ locators = {
     'AGRMT_CHK_BX_XPATH': '//*[@id="agreement"]',
 
     # поля ввода
+    # поле ввода адреса эл почты при авторизации
+    "AUTH_EMAIL_FLD_ID": "email",
     # поле ввода номера телефона
     'PHONE_FLD_ID': 'phone',
     'PHONE_FLD_XPATH': '//*[@id="phone"]',
@@ -78,6 +87,8 @@ locators = {
     'CHRON_DISC_YEAR_FLD_NM': 'diseases.0.value',
 
     # сообщения об ошибках
+    # сообщение об ошибке валидации поля имейл при авторизации
+    'ER_MESS_AUTH_EMAIL_XP': '//*[@id="root"]/div/div/div/div/form/div/span',
     # сообщение об ошибке валидации поля фамилия
     'ER_MESS_LNAME_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[1]/p',
     # сообщение об ошибке валидации поля имя
@@ -89,9 +100,9 @@ locators = {
     # сообщение об ошибке валидации поля Email
     'ER_MESS_EMAIL_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[1]/label[5]/p',
     # сообщение об ошибке валидации поля Рост
-    'ER_MESS_HEIGHT_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/label[1]/p',
-    # сообщение обошибке валидации поля Вес
-    'ER_MESS_WEIGHT_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/label[2]/p',
+    'ER_MESS_HEIGHT_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/div[1]/label/p',
+    # сообщение об ошибке валидации поля Вес
+    'ER_MESS_WEIGHT_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[2]/div/div[2]/label/p',
     # сообщение об ошибке валидации поля Аллерген
     'ER_MESS_ALLERGEN_XPATH': '//*[@id="root"]/section/div/div[2]/div/div/div[2]/div/form/div[3]/div/label/p',
     # сообщение об ошибке валидации поля Реакция
